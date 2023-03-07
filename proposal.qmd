@@ -86,6 +86,8 @@ library(tidyverse)
 
 -   Identify the source of the data.
 
+    The data is provided by the Los Angeles Police Department as part of their publicly available data sets.
+
 -   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
 
 -   Write a brief description of the observations.
