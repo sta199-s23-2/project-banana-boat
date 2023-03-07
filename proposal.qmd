@@ -43,7 +43,8 @@ library(tidyverse)
 ```{r}
 #| label: load-data-1
 
-# add code here
+energy_states <- read.csv("data/energy.csv")
+glimpse(energy_states)
 ```
 
 # Data 2
@@ -77,7 +78,8 @@ library(tidyverse)
 ```{r}
 #| label: load-data-2
 
-# add code here
+college_graduates <- read.csv("data/graduates.csv")
+glimpse(college_graduates)
 ```
 
 # Data 3
