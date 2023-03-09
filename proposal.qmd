@@ -106,9 +106,15 @@ glimpse(college_graduates)
 
 -   Find one published credible article on the topic you are interested in researching.
 
+Hill, J., Raber, G. & Gulledge, L. Down with the sickness? Los Angeles burglary and COVID-19 restrictions. J Exp Criminol (2022). https://doi.org/10.1007/s11292-022-09522-0
+
 -   Provide a one paragraph summary about the article.
 
+The objective of this article was to analyze burglary in Los Angeles based on Covid-19 restrictions. The study found that Covid-19 restrictions significantly increased burglary in industrial areas, but decreased burglary in residential areas. The study attributed the increase in crime to the decrease in capable guardianship as Covid-19 restrictions were placed. Capable guardianship is anything that discourages crime from taking place such as alarm systems or security in stores. Therefore, it is clear that as capable guardianship decreases, crime increases. However, the study did not give an explanation on why capable guardianship decreased with Covid-19 restrictions. The study also supports routine activity theory, which states that crime occurs when there is a motivated offender, a suitable target, and a lack of capable guardianship. Thus, when white collar professionals transitioned to working at home, there was a lack of suitable targets in residential areas. However, low income and essential workers continued to work in industrial areas, providing suitable targets for crime, which is why there was more crime in industrial areas compared to residential areas.
+
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
+
+Our research question is different from this study because it analyzes all different crimes during a certain period, which is not restricted to just burglary. In addition, we will look at many other factors including sex, severity of the crime, race, age, etc. 
 
 ## Glimpse of data
 
