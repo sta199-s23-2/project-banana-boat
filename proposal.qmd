@@ -114,7 +114,7 @@ The objective of this article was to analyze burglary in Los Angeles based on Co
 
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
 
-Our research question is different from this study because it analyzes all different crimes during a certain period, which is not restricted to just burglary. In addition, we will look at many other factors including sex, severity of the crime, race, age, etc. 
+Our research question is different from this study because it analyzes all different crimes during a certain period, which is not restricted to just burglary. In addition, we will look at many other factors including sex, severity of the crime, race, age, etc.
 
 ## Glimpse of data
 
