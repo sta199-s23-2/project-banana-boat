@@ -4,10 +4,10 @@ format: html
 editor: visual
 ---
 
-This project was developed by **\[team name\]** For [STA 199: Introduction to Data Science](https://sta199-s23-2.github.io/) at Duke University. The team is comprised of the following team members.
+This project was developed by **Banana Boat** For [STA 199: Introduction to Data Science](https://sta199-s23-2.github.io/) at Duke University. The team is comprised of the following team members.
 
--   Team member 1: One sentence description of Team member 1 (e.g., year, major, etc.).
--   Team member 2: One sentence description of Team member 2 (e.g., year, major, etc.).
--   Team member 3: One sentence description of Team member 3 (e.g., year, major, etc.).
--   Team member 4: One sentence description of Team member 4 (e.g., year, major, etc.).
--   ...
+-   Pascal Bell: Pascal is a first year student from Bethesda, MD majoring in Computer Science with a possible Statistical Science minor.
+-   Arthur Herman: Arthur is a first year student from Chevy Chase, MD majoring in Statistical Science with a minor in Finance.
+-   Cooper Likosar: Cooper is a first year student from Delray Beach, FL majoring in Statistical Science with minors in Finance and Mathematics
+-   Jonathan Nguyen: Jonathan is a first year student from Hanoi, Vietnam double majoring in Environmental Science and Data Science.
+-   Grant Williams: Grant is a second year student from Philadelphia, PA majoring in Biology.
