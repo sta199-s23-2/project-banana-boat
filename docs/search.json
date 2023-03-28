@@ -16,93 +16,93 @@
   {
     "objectID": "proposal.html",
     "href": "proposal.html",
-    "title": "Project title",
+    "title": "Banana Boat Stat199 Project",
     "section": "",
-    "text": "library(tidyverse)\n\nWarning: package 'ggplot2' was built under R version 4.2.2\n\n\nWarning: package 'tidyr' was built under R version 4.2.2\n\n\nWarning: package 'readr' was built under R version 4.2.2\n\n\nWarning: package 'purrr' was built under R version 4.2.2"
+    "text": "library(tidyverse)"
   },
   {
     "objectID": "proposal.html#introduction-and-data",
     "href": "proposal.html#introduction-and-data",
-    "title": "Project title",
+    "title": "Banana Boat Stat199 Project",
     "section": "Introduction and data",
     "text": "Introduction and data\n\nIdentify the source of the data.\nState when and how it was originally collected (by the original data curator, not necessarily how you found the data).\nWrite a brief description of the observations."
   },
   {
     "objectID": "proposal.html#research-question",
     "href": "proposal.html#research-question",
-    "title": "Project title",
+    "title": "Banana Boat Stat199 Project",
     "section": "Research question",
     "text": "Research question\n\nA well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)\nA description of the research topic along with a concise statement of your hypotheses on this topic.\nIdentify the types of variables in your research question. Categorical? Quantitative?"
   },
   {
     "objectID": "proposal.html#literature",
     "href": "proposal.html#literature",
-    "title": "Project title",
+    "title": "Banana Boat Stat199 Project",
     "section": "Literature",
     "text": "Literature\n\nFind one published credible article on the topic you are interested in researching.\nProvide a one paragraph summary about the article.\nIn 1-2 sentences, explain how your research question builds on / is different than the article you have cited."
   },
   {
     "objectID": "proposal.html#glimpse-of-data",
     "href": "proposal.html#glimpse-of-data",
-    "title": "Project title",
+    "title": "Banana Boat Stat199 Project",
     "section": "Glimpse of data",
-    "text": "Glimpse of data\n\n# add code here"
+    "text": "Glimpse of data\n\nenergy_states <- read.csv(\"data/energy.csv\")\nglimpse(energy_states)\n\nRows: 3,060\nColumns: 84\n$ State                                           <chr> \"Alaska\", \"Alaska\", \"A…\n$ Year                                            <int> 1960, 1961, 1962, 1963…\n$ Production.Coal                                 <dbl> 11263, 11497, 13588, 1…\n$ Consumption.Commercial.Coal                     <dbl> 496, 496, 593, 393, 30…\n$ Consumption.Commercial.Distillate.Fuel.Oil      <dbl> 1562, 1646, 1732, 1868…\n$ Consumption.Commercial.Geothermal               <dbl> 0, 0, 0, 0, 0, 0, 0, 0…\n$ Consumption.Commercial.Hydropower               <dbl> 0, 0, 0, 0, 0, 0, 0, 0…\n$ Consumption.Commercial.Kerosene                 <dbl> 0, 0, 0, 0, 0, 0, 0, 0…\n$ Consumption.Commercial.Petroleum                <dbl> 5230, 5304, 5251, 5475…\n$ Consumption.Commercial.Natural.Gas              <dbl> 0, 122, 19, 1632, 1944…\n$ Consumption.Commercial.Solar                    <dbl> 0, 0, 0, 0, 0, 0, 0, 0…\n$ Consumption.Commercial.Wind                     <dbl> 0, 0, 0, 0, 0, 0, 0, 0…\n$ Consumption.Commercial.Wood                     <dbl> 34, 35, 32, 31, 32, 30…\n$ Consumption.Electric.Power.Coal                 <dbl> 914, 1127, 1373, 1482,…\n$ Consumption.Electric.Power.Distillate.Fuel.Oil  <dbl> 554, 696, 865, 959, 14…\n$ Consumption.Electric.Power.Natural.Gas          <dbl> 0, 0, 0, 975, 1614, 21…\n$ Consumption.Electric.Power.Wood                 <dbl> 0, 0, 0, 0, 0, 0, 0, 0…\n$ Consumption.Industrial.Coal                     <dbl> 4980, 9174, 10696, 954…\n$ Consumption.Industrial.Distillate.Fuel.Oil      <dbl> 5115, 5698, 5422, 5996…\n$ Consumption.Industrial.Geothermal               <dbl> 0, 0, 0, 0, 0, 0, 0, 0…\n$ Consumption.Industrial.Hydropower               <dbl> 0, 0, 0, 0, 0, 0, 0, 0…\n$ Consumption.Industrial.Kerosene                 <dbl> 511, 185, 119, 129, 0,…\n$ Consumption.Industrial.Petroleum                <dbl> 7415, 7644, 7822, 1043…\n$ Consumption.Industrial.Natural.Gas              <dbl> 1856, 1934, 3399, 2225…\n$ Consumption.Industrial.Other.Petroleum.Products <dbl> 0, 0, 0, 1639, 1641, 1…\n$ Consumption.Industrial.Solar                    <dbl> 0, 0, 0, 0, 0, 0, 0, 0…\n$ Consumption.Industrial.Wind                     <dbl> 0, 0, 0, 0, 0, 0, 0, 0…\n$ Consumption.Industrial.Wood                     <dbl> 1840, 2288, 2511, 2700…\n$ Consumption.Refinery.Coal                       <dbl> 0, 0, 0, 0, 0, 0, 0, 0…\n$ Consumption.Refinery.Distillate.Fuel.Oil        <dbl> 0, 0, 0, 0, 0, 0, 0, 0…\n$ Consumption.Refinery.Natural.Gas                <dbl> 0, 0, 0, 0, 0, 0, 0, 0…\n$ Consumption.Residential.Coal                    <dbl> 714, 713, 854, 543, 42…\n$ Consumption.Residential.Distillate.Fuel.Oil     <dbl> 5046, 5316, 5594, 6034…\n$ Consumption.Residential.Geothermal              <dbl> 0, 0, 0, 0, 0, 0, 0, 0…\n$ Consumption.Residential.Kerosene                <dbl> 0, 52, 17, 35, 47, 57,…\n$ Consumption.Residential.Petroleum               <dbl> 5137, 5538, 5729, 6240…\n$ Consumption.Residential.Natural.Gas             <dbl> 176, 195, 556, 693, 10…\n$ Consumption.Residential.Wood                    <dbl> 1806, 1823, 1703, 1651…\n$ Consumption.Transportation.Coal                 <dbl> 86, 42, 43, 36, 33, 21…\n$ Consumption.Transportation.Distillate.Fuel.Oil  <dbl> 3077, 3667, 3799, 3339…\n$ Consumption.Transportation.Petroleum            <dbl> 27051, 31804, 34065, 3…\n$ Consumption.Transportation.Natural.Gas          <dbl> 2, 49, 75, 42, 0, 0, 0…\n$ Expenditure.Commercial.Coal                     <dbl> 0.0, 0.0, 0.0, 0.0, 0.…\n$ Expenditure.Commercial.Distillate.Fuel.Oil      <dbl> 0.0, 0.0, 0.0, 0.0, 0.…\n$ Expenditure.Commercial.Kerosene                 <dbl> 0.0, 0.0, 0.0, 0.0, 0.…\n$ Expenditure.Commercial.Petroleum                <dbl> 0.0, 0.0, 0.0, 0.0, 0.…\n$ Expenditure.Commercial.Natural.Gas              <dbl> 0.0, 0.0, 0.0, 0.0, 0.…\n$ Expenditure.Electric.Power.Coal                 <dbl> 0.0, 0.0, 0.0, 0.0, 0.…\n$ Expenditure.Electric.Power.Distillate.Fuel.Oil  <dbl> 0.0, 0.0, 0.0, 0.0, 0.…\n$ Expenditure.Electric.Power.Natural.Gas          <dbl> 0.0, 0.0, 0.0, 0.0, 0.…\n$ Expenditure.Industrial.Coal                     <dbl> 0.0, 0.0, 0.0, 0.0, 0.…\n$ Expenditure.Industrial.Distillate.Fuel.Oil      <dbl> 0.0, 0.0, 0.0, 0.0, 0.…\n$ Expenditure.Industrial.Kerosene                 <dbl> 0.0, 0.0, 0.0, 0.0, 0.…\n$ Expenditure.Industrial.Petroleum                <dbl> 0.0, 0.0, 0.0, 0.0, 0.…\n$ Expenditure.Industrial.Natural.Gas              <dbl> 0.0, 0.0, 0.0, 0.0, 0.…\n$ Expenditure.Industrial.Other.Petroleum.Products <dbl> 0.0, 0.0, 0.0, 0.0, 0.…\n$ Expenditure.Residential.Coal                    <dbl> 0.0, 0.0, 0.0, 0.0, 0.…\n$ Expenditure.Residential.Distillate.Fuel.Oil     <dbl> 0.0, 0.0, 0.0, 0.0, 0.…\n$ Expenditure.Residential.Kerosene                <dbl> 0.0, 0.0, 0.0, 0.0, 0.…\n$ Expenditure.Residential.Petroleum               <dbl> 0.0, 0.0, 0.0, 0.0, 0.…\n$ Expenditure.Residential.Natural.Gas             <dbl> 0.0, 0.0, 0.0, 0.0, 0.…\n$ Expenditure.Residential.Wood                    <dbl> 0.0, 0.0, 0.0, 0.0, 0.…\n$ Expenditure.Transportation.Coal                 <dbl> 0, 0, 0, 0, 0, 0, 0, 0…\n$ Expenditure.Transportation.Distillate.Fuel.Oil  <dbl> 0.0, 0.0, 0.0, 0.0, 0.…\n$ Expenditure.Transportation.Petroleum            <dbl> 0.0, 0.0, 0.0, 0.0, 0.…\n$ Expenditure.Transportation.Natural.Gas          <dbl> 0, 0, 0, 0, 0, 0, 0, 0…\n$ Price.Commercial.Coal                           <dbl> 0.00, 0.00, 0.00, 0.00…\n$ Price.Commercial.Distillate.Fuel.Oil            <dbl> 0.00, 0.00, 0.00, 0.00…\n$ Price.Commercial.Kerosene                       <dbl> 0.00, 0.00, 0.00, 0.00…\n$ Price.Commercial.Petroleum                      <dbl> 0.00, 0.00, 0.00, 0.00…\n$ Price.Commercial.Natural.Gas                    <dbl> 0.00, 0.00, 0.00, 0.00…\n$ Price.Electric.Power.Coal                       <dbl> 0.00, 0.00, 0.00, 0.00…\n$ Price.Electric.Power.Distillate.Fuel.Oil        <dbl> 0.00, 0.00, 0.00, 0.00…\n$ Price.Electric.Power.Natural.Gas                <dbl> 0.00, 0.00, 0.00, 0.00…\n$ Price.Industrial.Coal                           <dbl> 0.00, 0.00, 0.00, 0.00…\n$ Price.Industrial.Distillate.Fuel.Oil            <dbl> 0.00, 0.00, 0.00, 0.00…\n$ Price.Industrial.Kerosene                       <dbl> 0.00, 0.00, 0.00, 0.00…\n$ Price.Industrial.Petroleum                      <dbl> 0.00, 0.00, 0.00, 0.00…\n$ Price.Industrial.Natural.Gas                    <dbl> 0.00, 0.00, 0.00, 0.00…\n$ Price.Industrial.Other.Petroleum.Products       <dbl> 0.00, 0.00, 0.00, 0.00…\n$ Price.Transportation.Coal                       <dbl> 0.00, 0.00, 0.00, 0.00…\n$ Price.Transportation.Distillate.Fuel.Oil        <dbl> 0.00, 0.00, 0.00, 0.00…\n$ Price.Transportation.Petroleum                  <dbl> 0.00, 0.00, 0.00, 0.00…\n$ Price.Transportation.Natural.Gas                <dbl> 0, 0, 0, 0, 0, 0, 0, 0…"
   },
   {
     "objectID": "proposal.html#introduction-and-data-1",
     "href": "proposal.html#introduction-and-data-1",
-    "title": "Project title",
+    "title": "Banana Boat Stat199 Project",
     "section": "Introduction and data",
     "text": "Introduction and data\n\nIdentify the source of the data.\nState when and how it was originally collected (by the original data curator, not necessarily how you found the data).\nWrite a brief description of the observations."
   },
   {
     "objectID": "proposal.html#research-question-1",
     "href": "proposal.html#research-question-1",
-    "title": "Project title",
+    "title": "Banana Boat Stat199 Project",
     "section": "Research question",
     "text": "Research question\n\nA well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)\nA description of the research topic along with a concise statement of your hypotheses on this topic.\nIdentify the types of variables in your research question. Categorical? Quantitative?"
   },
   {
     "objectID": "proposal.html#literature-1",
     "href": "proposal.html#literature-1",
-    "title": "Project title",
+    "title": "Banana Boat Stat199 Project",
     "section": "Literature",
     "text": "Literature\n\nFind one published credible article on the topic you are interested in researching.\nProvide a one paragraph summary about the article.\nIn 1-2 sentences, explain how your research question builds on / is different than the article you have cited."
   },
   {
     "objectID": "proposal.html#glimpse-of-data-1",
     "href": "proposal.html#glimpse-of-data-1",
-    "title": "Project title",
+    "title": "Banana Boat Stat199 Project",
     "section": "Glimpse of data",
-    "text": "Glimpse of data\n\n# add code here"
+    "text": "Glimpse of data\n\ncollege_graduates <- read.csv(\"data/graduates.csv\")\nglimpse(college_graduates)\n\nRows: 517\nColumns: 50\n$ Year                                                          <int> 1993, 19…\n$ Demographics.Total                                            <int> 1295598,…\n$ Education.Major                                               <chr> \"Biologi…\n$ Salaries.Highest                                              <dbl> 999999, …\n$ Salaries.Lowest                                               <dbl> 0, 9000,…\n$ Salaries.Mean                                                 <dbl> 160585.7…\n$ Salaries.Median                                               <dbl> 51000, 5…\n$ Salaries.Quantity                                             <int> 13432, 3…\n$ Salaries.Standard.Deviation                                   <dbl> 297818.2…\n$ Demographics.Ethnicity.Asians                                 <int> 84495, 2…\n$ Demographics.Ethnicity.Minorities                             <int> 115016, …\n$ Demographics.Ethnicity.Whites                                 <int> 1094775,…\n$ Demographics.Gender.Females                                   <int> 551695, …\n$ Demographics.Gender.Males                                     <int> 743903, …\n$ Education.Degrees.Bachelors                                   <int> 671374, …\n$ Education.Degrees.Doctorates                                  <int> 90543, 1…\n$ Education.Degrees.Masters                                     <int> 248813, …\n$ Education.Degrees.Professionals                               <int> 284869, …\n$ Employment.Employer.Type.Business.Industry                    <int> 669270, …\n$ Employment.Employer.Type.Educational.Institution              <int> 300468, …\n$ Employment.Employer.Type.Government                           <int> 121117, …\n$ Employment.Reason.Working.Outside.Field.Career.Change         <int> 98112, 1…\n$ Employment.Reason.Working.Outside.Field.Family.related        <int> 65619, 4…\n$ Employment.Reason.Working.Outside.Field.Job.Location          <int> 90842, 6…\n$ Employment.Reason.Working.Outside.Field.No.Job.Available      <int> 76598, 7…\n$ Employment.Reason.Working.Outside.Field.Other                 <int> 24821, 3…\n$ Employment.Reason.Working.Outside.Field.Pay.Promotion         <int> 111962, …\n$ Employment.Reason.Working.Outside.Field.Working.Conditions    <int> 100886, …\n$ Employment.Reason.for.Not.Working.Family                      <int> 45962, 3…\n$ Employment.Reason.for.Not.Working.Layoff                      <int> 7457, 18…\n$ Employment.Reason.for.Not.Working.No.Job.Available            <int> 14976, 3…\n$ Employment.Reason.for.Not.Working.No.need.want                <int> 30989, 4…\n$ Employment.Reason.for.Not.Working.Student                     <int> 51891, 2…\n$ Employment.Status.Employed                                    <int> 1090855,…\n$ Employment.Status.Not.in.Labor.Force                          <int> 181940, …\n$ Employment.Status.Unemployed                                  <int> 22803, 3…\n$ Employment.Work.Activity.Accounting.Finance.Contracts         <int> 793888, …\n$ Employment.Work.Activity.Applied.Research                     <int> 341238, …\n$ Employment.Work.Activity.Basic.Research                       <int> 224277, …\n$ Employment.Work.Activity.Computer.Applications                <int> 297235, …\n$ Employment.Work.Activity.Design                               <int> 118772, …\n$ Employment.Work.Activity.Development                          <int> 191867, …\n$ Employment.Work.Activity.Human.Resources                      <int> 365049, …\n$ Employment.Work.Activity.Managing.Supervising.People.Projects <int> 539430, …\n$ Employment.Work.Activity.Other                                <int> 99749, 1…\n$ Employment.Work.Activity.Productions.Operations.Maintenance   <int> 103385, …\n$ Employment.Work.Activity.Professional.Service                 <int> 506252, …\n$ Employment.Work.Activity.Qualitity.Productivity.Management    <int> 269042, …\n$ Employment.Work.Activity.Sales..Purchasing..Marketing         <int> 215169, …\n$ Employment.Work.Activity.Teaching                             <int> 381908, …"
   },
   {
     "objectID": "proposal.html#introduction-and-data-2",
     "href": "proposal.html#introduction-and-data-2",
-    "title": "Project title",
+    "title": "Banana Boat Stat199 Project",
     "section": "Introduction and data",
-    "text": "Introduction and data\n\nIdentify the source of the data.\nState when and how it was originally collected (by the original data curator, not necessarily how you found the data).\nWrite a brief description of the observations."
+    "text": "Introduction and data\n\nIdentify the source of the data.\nThe data is provided by the Los Angeles Police Department as part of their publicly available data sets.\nState when and how it was originally collected (by the original data curator, not necessarily how you found the data).\nWrite a brief description of the observations."
   },
   {
     "objectID": "proposal.html#research-question-2",
     "href": "proposal.html#research-question-2",
-    "title": "Project title",
+    "title": "Banana Boat Stat199 Project",
     "section": "Research question",
     "text": "Research question\n\nA well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)\nA description of the research topic along with a concise statement of your hypotheses on this topic.\nIdentify the types of variables in your research question. Categorical? Quantitative?"
   },
   {
     "objectID": "proposal.html#literature-2",
     "href": "proposal.html#literature-2",
-    "title": "Project title",
+    "title": "Banana Boat Stat199 Project",
     "section": "Literature",
-    "text": "Literature\n\nFind one published credible article on the topic you are interested in researching.\nProvide a one paragraph summary about the article.\nIn 1-2 sentences, explain how your research question builds on / is different than the article you have cited."
+    "text": "Literature\n\nFind one published credible article on the topic you are interested in researching.\n\nHill, J., Raber, G. & Gulledge, L. Down with the sickness? Los Angeles burglary and COVID-19 restrictions. J Exp Criminol (2022). https://doi.org/10.1007/s11292-022-09522-0\n\nProvide a one paragraph summary about the article.\n\nThe objective of this article was to analyze burglary in Los Angeles based on Covid-19 restrictions. The study found that Covid-19 restrictions significantly increased burglary in industrial areas, but decreased burglary in residential areas. The study attributed the increase in crime to the decrease in capable guardianship as Covid-19 restrictions were placed. Capable guardianship is anything that discourages crime from taking place such as alarm systems or security in stores. Therefore, it is clear that as capable guardianship decreases, crime increases. However, the study did not give an explanation on why capable guardianship decreased with Covid-19 restrictions. The study also supports routine activity theory, which states that crime occurs when there is a motivated offender, a suitable target, and a lack of capable guardianship. Thus, when white collar professionals transitioned to working at home, there was a lack of suitable targets in residential areas. However, low income and essential workers continued to work in industrial areas, providing suitable targets for crime, which is why there was more crime in industrial areas compared to residential areas.\n\nIn 1-2 sentences, explain how your research question builds on / is different than the article you have cited.\n\nOur research question is different from this study because it analyzes all different crimes during a certain period, which is not restricted to just burglary. In addition, we will look at many other factors including sex, severity of the crime, race, age, etc."
   },
   {
     "objectID": "proposal.html#glimpse-of-data-2",
     "href": "proposal.html#glimpse-of-data-2",
-    "title": "Project title",
+    "title": "Banana Boat Stat199 Project",
     "section": "Glimpse of data",
-    "text": "Glimpse of data\n\n# add code here"
+    "text": "Glimpse of data\n\ncrime_2020 <- read.csv(\"data/Crime_Data_from_2020_to_Present.csv\")\nglimpse(crime_2020)\n\nRows: 47,697\nColumns: 28\n$ DR_NO          <int> 200205570, 200106179, 200106182, 200106186, 200106187, …\n$ Date.Rptd      <chr> \"02/01/2020 12:00:00 AM\", \"02/01/2020 12:00:00 AM\", \"02…\n$ DATE.OCC       <chr> \"02/01/2020 12:00:00 AM\", \"02/01/2020 12:00:00 AM\", \"02…\n$ TIME.OCC       <int> 1950, 415, 500, 1930, 2230, 1500, 1315, 1030, 2330, 163…\n$ AREA           <int> 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…\n$ AREA.NAME      <chr> \"Rampart\", \"Central\", \"Central\", \"Central\", \"Central\", …\n$ Rpt.Dist.No    <int> 246, 153, 147, 105, 192, 195, 164, 111, 182, 111, 162, …\n$ Part.1.2       <int> 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 2…\n$ Crm.Cd         <int> 510, 220, 440, 510, 330, 420, 745, 624, 510, 420, 442, …\n$ Crm.Cd.Desc    <chr> \"VEHICLE - STOLEN\", \"ATTEMPTED ROBBERY\", \"THEFT PLAIN -…\n$ Mocodes        <chr> \"\", \"1822 2033 1218 1268 0416 0429 0337\", \"1822 1218 20…\n$ Vict.Age       <int> 0, 59, 45, 0, 23, 38, 0, 52, 0, 0, 35, 40, 40, 62, 44, …\n$ Vict.Sex       <chr> \"\", \"M\", \"M\", \"\", \"M\", \"M\", \"X\", \"F\", \"\", \"\", \"M\", \"M\",…\n$ Vict.Descent   <chr> \"\", \"B\", \"B\", \"\", \"W\", \"B\", \"X\", \"H\", \"\", \"\", \"O\", \"B\",…\n$ Premis.Cd      <int> 101, 102, 517, 101, 504, 101, 210, 203, 108, 101, 404, …\n$ Premis.Desc    <chr> \"STREET\", \"SIDEWALK\", \"MISSIONS/SHELTERS\", \"STREET\", \"O…\n$ Weapon.Used.Cd <int> NA, 400, NA, NA, NA, NA, NA, 400, NA, NA, NA, 207, NA, …\n$ Weapon.Desc    <chr> \"\", \"STRONG-ARM (HANDS, FIST, FEET OR BODILY FORCE)\", \"…\n$ Status         <chr> \"IC\", \"IC\", \"IC\", \"IC\", \"IC\", \"IC\", \"IC\", \"IC\", \"IC\", \"…\n$ Status.Desc    <chr> \"Invest Cont\", \"Invest Cont\", \"Invest Cont\", \"Invest Co…\n$ Crm.Cd.1       <int> 510, 220, 440, 510, 330, 420, 745, 624, 510, 420, 442, …\n$ Crm.Cd.2       <int> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…\n$ Crm.Cd.3       <int> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…\n$ Crm.Cd.4       <int> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…\n$ LOCATION       <chr> \"WESTLAKE\", \"5TH\", \"300 E  5TH                         …\n$ Cross.Street   <chr> \"WILSHIRE\", \"SPRING\", \"\", \"\", \"\", \"\", \"\", \"\", \"FLOWER  …\n$ LAT            <dbl> 34.0574, 34.0474, 34.0453, 34.0736, 34.0401, 34.0317, 3…\n$ LON            <dbl> -118.2747, -118.2496, -118.2443, -118.2312, -118.2668, …"
   },
   {
     "objectID": "report.html",
