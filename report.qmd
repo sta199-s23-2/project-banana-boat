@@ -21,15 +21,9 @@ As climate change continues to progress rapidly, it is important to move towards
 
 States that have higher emphasis on technological advancement such as California and North Carolina will see a significant increase in renewable energy production and consumption.
 
-**Important definitions**: The data set contains both categorical and quantitative variables. The categorical variables include "State". The remaining columns, focusing on relevant facts regarding different uses of energy, are all quantitative.
+Important definitions: The data set contains both categorical and quantitative variables. The categorical variables include "State". The remaining columns, focusing on relevant facts regarding different uses of energy, are all quantitative.
 
-Renewable energy:
-
-For our project, energy is considered renewable if it meets two criteria.
-
-The energy must be derived from a naturally occurring source.
-
-The energy is naturally replenished at a higher rate than it is consumed/used.
+Renewable energy: For our project, energy is considered renewable if it meets two criteria. First, the energy must be derived from a naturally occurring source. Additionally, the energy is naturally replenished at a higher rate than it is consumed/used.
 
 Other energy sources: natural gas, coal, as well as any other sources of energy.
 
