@@ -133,8 +133,6 @@ Here, we use a bar graph in order to compare each states renewable energy consum
 
 Track these states over time:
 
-Highest:
-
 ```{r}
 data |>
   filter(State == "California" |
@@ -153,21 +151,49 @@ data |>
 
 This dot plot with lines of best fit allows us to better visualize how these states consumption of renewable energy has increased over time.
 
-Lowest:
+Metropolitan vs rural:
 
 ```{r}
-data |>
-  filter(State == "Maine" |
+metropolitan <- data |>
+  filter(State == "California" |
+         State == "District of Columbia" |
+         State == "New York" |
+         State == "Massachusetts" |
+         State == "Texas") |>
+  group_by(State)
+
+rural <- data |>
+filter(State == "Maine" |
          State == "Vermont" |
          State == "Mississippi" |
          State == "Montana" |
          State == "West Virginia") |>
+  group_by(State)
+
+```
+
+```{r}
+metropolitan |>
+  ggplot(aes(x = Year, y = prop_renewable, color = State)) +
+  geom_point(alpha = 0.5) +
+  scale_color_viridis_d() +
+  geom_smooth(se = FALSE) +
+  scale_color_viridis_d() +
+  labs(y = "Proportion of Energy from Renewable Sources", 
+       x = "Year", title = "Energy in Most Metropolitan States")
+```
+
+```{r}
+rural |>
   group_by(State) |>
   ggplot(aes(x = Year, y = prop_renewable, color = State)) +
   geom_point(alpha = 0.5) +
   scale_color_viridis_d() +
   geom_smooth(se = FALSE) +
-  scale_color_viridis_d()
+  scale_color_viridis_d() +
+  labs(y = "Proportion of Energy from Renewable Sources", 
+       x = "Year", title = "Energy in Most Rural States")
+
 
 ```
 
@@ -263,10 +289,10 @@ midwest |>
   geom_smooth(se = FALSE) +
   scale_color_viridis_d() +
   labs(y = "Proportion of Energy from Renewable Sources", 
-       x = "Year", title = "Energy in midwest States")
+       x = "Year", title = "Energy in Midwest States")
 
 ```
 
 These graphs allow us to both compare the different regions in the US, and within each region see how the consumption of renewable energy by state has changed over time. With this, we can analyze trends and patterns by region.
 
-**Results** Our data confirms several important pieces of information. Primarily, renewable energy consumption since 1960 has overall increased significantly. Similarly, California, Washington D.C., Hawaii, Massachusett, and Nevada use the highest proportion of renewable energy, with Hawaii having the highest proportion of the 5. Just like the nation as a whole, these states have seen a significant increase in renewable energy usage, sharply increasing in the early 2000s. Of the 5 states with the lowest renewable energy usage, Maine started much higher and drastically decreased around 1990.
+**Results** Our data confirms several important pieces of information. Primarily, renewable energy consumption since 1960 has overall increased significantly. Similarly, California, Washington D.C., Hawaii, Massachusetts, and Nevada use the highest proportion of renewable energy, with Hawaii having the highest proportion of the 5. Just like the nation as a whole, these states have seen a significant increase in renewable energy usage, sharply increasing in the early 2000s. When comparing metropolitan to rural areas, overall metropolitan areas have a much higher proportion of renewable energies compared to rural areas. Furthermore, metropolitan areas over the last years have increased their proportion of renewable energies, while rural areas have stayed stagnant or decreased. In terms of geographical location, the northeastern states by far have the highest proportion of renewable energy. The southern states, on the other hand, have the worst proportion of renewable energy.
