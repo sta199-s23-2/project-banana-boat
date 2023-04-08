@@ -101,6 +101,7 @@ national_renewable_usage <- data |>
 
 ```
 
+
 graph national usage of renewable energy:
 
 ```{r}
@@ -165,6 +166,99 @@ data |>
 
 ```
 
+Geographical location:
+
+```{r}
+south <- data |>
+filter(State == "Alabama" |
+         State == "Georgia" |
+         State == "Mississippi" |
+         State == "Texas" |
+         State == "Louisiana" |
+         State == "Oklahoma" |
+         State == "Arkansas" |
+         State == "South Carolina") |>
+  group_by(State)
+
+northeast <- data |>
+filter(State == "Maine" |
+         State == "Massachusetts" |
+         State == "Vermont" |
+         State == "New Hampshire" |
+         State == "Connecticut" |
+         State == "Pennsylvania" |
+         State == "New York" |
+         State == "New Jersey" |
+         State == "Maryland" | 
+         State == "District of Columbia" |
+         State == "Rhode Island" |
+         State == "Delaware")|>
+  group_by(State)
+
+west <- data |>
+filter(State == "California" |
+         State == "Washington" |
+         State == "Oregon" |
+         State == "Colorado" |
+         State == "Utah" |
+         State == "Arizona" |
+         State == "" |
+         State == "Utah" )|>
+  group_by(State)
+
+midwest <- data |>
+filter(State == "Montana" |
+         State == "Minnesota" |
+         State == "Nebraska" |
+         State == "Kansas" |
+         State == "Iowa" |
+         State == "Missouri" |
+         State == "Idaho" |
+         State == "Illinois" |
+         State == "Michigan")|>
+  group_by(State)
+
+south |>
+  group_by(State) |>
+  ggplot(aes(x = Year, y = prop_renewable, color = State)) +
+  geom_point(alpha = 0.5) +
+  scale_color_viridis_d() +
+  geom_smooth(se = FALSE) +
+  scale_color_viridis_d() +
+  labs(y = "Proportion of Energy from Renewable Sources", 
+       x = "Year", title = "Energy in Southern States")
+
+northeast |>
+  group_by(State) |>
+  ggplot(aes(x = Year, y = prop_renewable, color = State)) +
+  geom_point(alpha = 0.5) +
+  scale_color_viridis_d() +
+  geom_smooth(se = FALSE) +
+  scale_color_viridis_d() +
+  labs(y = "Proportion of Energy from Renewable Sources", 
+       x = "Year", title = "Energy in Southern States")
+
+west |>
+  group_by(State) |>
+  ggplot(aes(x = Year, y = prop_renewable, color = State)) +
+  geom_point(alpha = 0.5) +
+  scale_color_viridis_d() +
+  geom_smooth(se = FALSE) +
+  scale_color_viridis_d() +
+  labs(y = "Proportion of Energy from Renewable Sources", 
+       x = "Year", title = "Energy in Southern States")
+
+midwest |>
+  group_by(State) |>
+  ggplot(aes(x = Year, y = prop_renewable, color = State)) +
+  geom_point(alpha = 0.5) +
+  scale_color_viridis_d() +
+  geom_smooth(se = FALSE) +
+  scale_color_viridis_d() +
+  labs(y = "Proportion of Energy from Renewable Sources", 
+       x = "Year", title = "Energy in Southern States")
+
+```
 
 
 **Results**
