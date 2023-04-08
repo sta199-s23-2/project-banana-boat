@@ -145,7 +145,10 @@ data |>
   geom_point(alpha = 0.5) +
   scale_color_viridis_d() +
   geom_smooth(se = FALSE) +
-  scale_color_viridis_d()
+  scale_color_viridis_d() +
+    labs(y = "Proportion of Energy from Renewable Sources", 
+       x = "Year", title = "Energy in Most Metropolitan States")
+
 
 ```
 
