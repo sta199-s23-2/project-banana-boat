@@ -101,7 +101,6 @@ national_renewable_usage <- data |>
 
 ```
 
-
 graph national usage of renewable energy:
 
 ```{r}
@@ -113,6 +112,8 @@ national_renewable_usage |>
        y = "Proportion of Renewable Energy Consumption")
 
 ```
+Here, we use a dot plot to demonstrate the change over time of renewable consumption. Additionally, we added  a line of best fit in order to best see how the consumption changed over time. 
+
 
 Energy proportion for top 5 states in 2019:
 
@@ -127,6 +128,7 @@ data |>
        y = "Renewable Energy Consumption in 2019 (Proportion)")
 
 ```
+Here, we use a bar graph in order to compare each states renewable energy consumption in 2019. 
 
 Track these states over time:
 
@@ -147,6 +149,7 @@ data |>
   scale_color_viridis_d()
 
 ```
+This dot plot with lines of best fit allows us to better visualize how these states consumption of renewable energy has increased over time. 
 
 Lowest:
 
@@ -165,6 +168,7 @@ data |>
   scale_color_viridis_d()
 
 ```
+This dot plot with lines of best fit shows the 5 states with the lowest renewable energy consumption, and allows us to see how their consumption of renewable energy has changed over time. 
 
 Geographical location:
 
@@ -236,7 +240,7 @@ northeast |>
   geom_smooth(se = FALSE) +
   scale_color_viridis_d() +
   labs(y = "Proportion of Energy from Renewable Sources", 
-       x = "Year", title = "Energy in Southern States")
+       x = "Year", title = "Energy in NE States")
 
 west |>
   group_by(State) |>
@@ -246,7 +250,7 @@ west |>
   geom_smooth(se = FALSE) +
   scale_color_viridis_d() +
   labs(y = "Proportion of Energy from Renewable Sources", 
-       x = "Year", title = "Energy in Southern States")
+       x = "Year", title = "Energy in Western States")
 
 midwest |>
   group_by(State) |>
@@ -256,9 +260,9 @@ midwest |>
   geom_smooth(se = FALSE) +
   scale_color_viridis_d() +
   labs(y = "Proportion of Energy from Renewable Sources", 
-       x = "Year", title = "Energy in Southern States")
+       x = "Year", title = "Energy in midwest States")
 
 ```
-
+These graphs allow us to both compare the different regions in the US, and within each region see how the consumption of renewable energy by state has changed over time. With this, we can analyze trends and patterns by region. 
 
 **Results**
