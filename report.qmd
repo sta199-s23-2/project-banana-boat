@@ -33,7 +33,7 @@ Groups of interest: states, expenditures and consumption of renewable energy and
 
 ```{r}
 library(tidyverse)
-data <- read_csv("~/Final Project/data/energy.csv")
+data <- read_csv("~/project-banana-boat/data/energy.csv")
 ```
 
 Creating variables total energy, total renewable energy, and proportion of renewable energy consumption:
@@ -112,8 +112,8 @@ national_renewable_usage |>
        y = "Proportion of Renewable Energy Consumption")
 
 ```
-Here, we use a dot plot to demonstrate the change over time of renewable consumption. Additionally, we added  a line of best fit in order to best see how the consumption changed over time. 
 
+Here, we use a dot plot to demonstrate the change over time of renewable consumption. Additionally, we added a line of best fit in order to best see how the consumption changed over time.
 
 Energy proportion for top 5 states in 2019:
 
@@ -128,7 +128,8 @@ data |>
        y = "Renewable Energy Consumption in 2019 (Proportion)")
 
 ```
-Here, we use a bar graph in order to compare each states renewable energy consumption in 2019. 
+
+Here, we use a bar graph in order to compare each states renewable energy consumption in 2019.
 
 Track these states over time:
 
@@ -149,7 +150,8 @@ data |>
   scale_color_viridis_d()
 
 ```
-This dot plot with lines of best fit allows us to better visualize how these states consumption of renewable energy has increased over time. 
+
+This dot plot with lines of best fit allows us to better visualize how these states consumption of renewable energy has increased over time.
 
 Lowest:
 
@@ -168,7 +170,8 @@ data |>
   scale_color_viridis_d()
 
 ```
-This dot plot with lines of best fit shows the 5 states with the lowest renewable energy consumption, and allows us to see how their consumption of renewable energy has changed over time. 
+
+This dot plot with lines of best fit shows the 5 states with the lowest renewable energy consumption, and allows us to see how their consumption of renewable energy has changed over time.
 
 Geographical location:
 
@@ -263,8 +266,7 @@ midwest |>
        x = "Year", title = "Energy in midwest States")
 
 ```
-These graphs allow us to both compare the different regions in the US, and within each region see how the consumption of renewable energy by state has changed over time. With this, we can analyze trends and patterns by region. 
 
-**Results**
-Our data confirms several important pieces of information. Primarily, renewable energy consumption since 1960 has overall increased significantly. Similarly, California, Washington D.C., Hawaii, Massachusett, and Nevada use the highest proportion of renewable energy, with Hawaii having the highest proportion of the 5. Just like the nation as a whole, these states have seen a significant increase in renewable energy usage, sharply increasing in the early 2000s. Of the 5 states with the lowest renewable energy usage, Maine started much higher and drastically decreased around 1990.
+These graphs allow us to both compare the different regions in the US, and within each region see how the consumption of renewable energy by state has changed over time. With this, we can analyze trends and patterns by region.
 
+**Results** Our data confirms several important pieces of information. Primarily, renewable energy consumption since 1960 has overall increased significantly. Similarly, California, Washington D.C., Hawaii, Massachusett, and Nevada use the highest proportion of renewable energy, with Hawaii having the highest proportion of the 5. Just like the nation as a whole, these states have seen a significant increase in renewable energy usage, sharply increasing in the early 2000s. Of the 5 states with the lowest renewable energy usage, Maine started much higher and drastically decreased around 1990.
