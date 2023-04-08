@@ -266,3 +266,5 @@ midwest |>
 These graphs allow us to both compare the different regions in the US, and within each region see how the consumption of renewable energy by state has changed over time. With this, we can analyze trends and patterns by region. 
 
 **Results**
+Our data confirms several important pieces of information. Primarily, renewable energy consumption since 1960 has overall increased significantly. Similarly, California, Washington D.C., Hawaii, Massachusett, and Nevada use the highest proportion of renewable energy, with Hawaii having the highest proportion of the 5. Just like the nation as a whole, these states have seen a significant increase in renewable energy usage, sharply increasing in the early 2000s. Of the 5 states with the lowest renewable energy usage, Maine started much higher and drastically decreased around 1990.
+
