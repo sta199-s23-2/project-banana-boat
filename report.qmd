@@ -1,5 +1,5 @@
 ---
-title: "Project title"
+title: "Banana Boat STA 199 Project"
 subtitle: "Report"
 format: html
 editor: visual
@@ -7,4 +7,28 @@ execute:
   echo: true
 ---
 
-Add project writeup here.
+**Introduction & Data**
+
+This data set comes from the CORGIS Dataset Project, who got this data from the US Energy Information Administration, a part of the US Government. This data has been collected by the US Energy Information Administration from 1960 to 2019 based on the consumption, production, expenditures, and price of different sources of energy by state.
+
+The observations are of different states in different years and have variables for many energy sources, including coal, kerosene, geothermal, hydro, etc. There are also different variables for the production, consumption, expenditure, and price of these types of energy. For some of these, information was not available, in which case a 0 was reported.
+
+There should be no ethical concerns about the data since the data is not specific to individuals and reports many types of used energy in the US.
+
+*Research question: On both a state and national level, how has the proportion of renewable energy usage/production relative to overall energy usage/production changed over time, and has there been a shift in which states are the most renewable energy heavy?*
+
+As climate change continues to progress rapidly, it is important to move towards clean technology and renewable energy sources in order to save our earth while ensuring innovation. The United States of America has emerged as a leading renewable energy innovator in the world, which is a perfect study target for researchers who are interested in the implementation of renewable energy. Our team thinks that analyzing the energy usage of different states is a good way to see how our country is progressing toward the goal of slowing global warming on a local level. This research method will help policymakers and environmental engineers pinpoint the specific problems regarding renewable energy in our country and help us move towards a clean future of collaboration of all states.
+
+States that have higher emphasis on technological advancement such as California and North Carolina will see a significant increase in renewable energy production and consumption.
+
+Important definitions: The data set contains both categorical and quantitative variables. The categorical variables include "State". The remaining columns, focusing on relevant facts regarding different uses of energy, are all quantitative.
+
+Renewable energy: For our project, energy is considered renewable if it meets two criteria. First, the energy must be derived from a naturally occurring source. Additionally, the energy is naturally replenished at a higher rate than it is consumed/used.
+
+Other energy sources: natural gas, coal, as well as any other sources of energy.
+
+Groups of interest: states, expenditures and consumption of renewable energy and other energy sources, etc. Our goal is to study the effects of these aforementioned variables to learn about consumption habits and technological specialization of different states.
+
+**Methodology**
+
+**Results**
