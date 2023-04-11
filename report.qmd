@@ -33,7 +33,7 @@ Groups of interest: states, expenditures and consumption of renewable energy and
 
 ```{r}
 library(tidyverse)
-data <- read_csv("~/project-banana-boat/data/energy.csv")
+data <- read_csv("~/Final Project/data/energy.csv")
 ```
 
 Creating variables total energy, total renewable energy, and proportion of renewable energy consumption:
@@ -297,5 +297,19 @@ midwest |>
 ```
 
 These graphs allow us to both compare the different regions in the US, and within each region see how the consumption of renewable energy by state has changed over time. With this, we can analyze trends and patterns by region.
+
+```{r}
+
+south |>
+  group_by(State) |>
+  summarize(mean_consumption = mean(prop_renewable))
+
+null_dist <- south |>
+  specify(response = prop_renewable) |>
+  hypothesize(null = "point", mu = 60) |>
+  generate(reps = 1000, type = "bootstrap") |>
+  calculate(stat = "mean")
+```
+
 
 **Results** Our data confirms several important pieces of information. Primarily, renewable energy consumption since 1960 has overall increased significantly. Similarly, California, Washington D.C., Hawaii, Massachusetts, and Nevada use the highest proportion of renewable energy, with Hawaii having the highest proportion of the 5. Just like the nation as a whole, these states have seen a significant increase in renewable energy usage, sharply increasing in the early 2000s. When comparing metropolitan to rural areas, overall metropolitan areas have a much higher proportion of renewable energies compared to rural areas. Furthermore, metropolitan areas over the last years have increased their proportion of renewable energies, while rural areas have stayed stagnant or decreased. In terms of geographical location, the northeastern states by far have the highest proportion of renewable energy. The southern states, on the other hand, have the worst proportion of renewable energy.
