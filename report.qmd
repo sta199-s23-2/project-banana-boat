@@ -7,7 +7,7 @@ execute:
   echo: true
 ---
 
-**Introduction & Data**
+## **Introduction & Data**
 
 This data set comes from the CORGIS Dataset Project, who got this data from the US Energy Information Administration, a part of the US Government. This data has been collected by the US Energy Information Administration from 1960 to 2019 based on the consumption, production, expenditures, and price of different sources of energy by state.
 
@@ -29,9 +29,11 @@ Other energy sources: natural gas, coal, as well as any other sources of energy.
 
 Groups of interest: states, expenditures and consumption of renewable energy and other energy sources, etc. Our goal is to study the effects of these aforementioned variables to learn about consumption habits and technological specialization of different states.
 
-**Methodology**
+## **Methodology**
 
 ```{r}
+#| label: data-loading
+
 library(tidyverse)
 data <- read_csv("~/Final Project/data/energy.csv")
 ```
@@ -39,6 +41,8 @@ data <- read_csv("~/Final Project/data/energy.csv")
 Creating variables total energy, total renewable energy, and proportion of renewable energy consumption:
 
 ```{r}
+#| label: variables-generation
+
 data <- data |>
   mutate(total_energy = Consumption.Commercial.Coal + 
                         `Consumption.Commercial.Distillate Fuel Oil` +
@@ -86,31 +90,32 @@ data <- data |>
          .after = total_energy) |>
   mutate(prop_renewable = (total_renewable / total_energy),
           .after = total_renewable)
-
 ```
 
 Calculate total proportions for all states per year:
 
 ```{r}
+#| label: total-proportion
+
 national_renewable_usage <- data |>
   group_by(Year) |>
   summarize(total_energy_all_states = sum(total_energy),
             renewable_energy_all_states = sum(total_renewable)) |>
   mutate(prop_renewable_all_states = (renewable_energy_all_states / 
                                           total_energy_all_states))
-
 ```
 
-graph national usage of renewable energy:
+Graph national usage of renewable energy:
 
 ```{r}
+#| label: renew-energy-graph
+
 national_renewable_usage |>
   ggplot(aes(x = Year, y = prop_renewable_all_states)) +
   geom_point() +
   geom_smooth(se = FALSE) +
   labs(title = "National Renewable Consumption over Time",
        y = "Proportion of Renewable Energy Consumption")
-
 ```
 
 Here, we use a dot plot to demonstrate the change over time of renewable consumption. Additionally, we added a line of best fit in order to best see how the consumption changed over time.
@@ -118,6 +123,8 @@ Here, we use a dot plot to demonstrate the change over time of renewable consump
 Energy proportion for top 5 states in 2019:
 
 ```{r}
+#| label: top5-energy
+
 data |>
   filter(Year == 2019) |>
   arrange(desc(prop_renewable)) |>
@@ -126,7 +133,6 @@ data |>
   geom_col(color = "black", fill = "lightblue") +
   labs(title = "Top Five States for Renewable Energy consumption in 2019",
        y = "Renewable Energy Consumption in 2019 (Proportion)")
-
 ```
 
 Here, we use a bar graph in order to compare each states renewable energy consumption in 2019.
@@ -134,6 +140,8 @@ Here, we use a bar graph in order to compare each states renewable energy consum
 Track these states over time:
 
 ```{r}
+#| label: tracker
+
 data |>
   filter(State == "California" |
          State == "District of Columbia" |
@@ -148,8 +156,6 @@ data |>
   scale_color_viridis_d() +
     labs(y = "Proportion of Energy from Renewable Sources", 
        x = "Year", title = "Energy in Most Metropolitan States")
-
-
 ```
 
 This dot plot with lines of best fit allows us to better visualize how these states consumption of renewable energy has increased over time.
@@ -157,6 +163,8 @@ This dot plot with lines of best fit allows us to better visualize how these sta
 Metropolitan vs rural:
 
 ```{r}
+#| label: comparison
+
 metropolitan <- data |>
   filter(State == "California" |
          State == "District of Columbia" |
@@ -172,10 +180,11 @@ filter(State == "Maine" |
          State == "Montana" |
          State == "West Virginia") |>
   group_by(State)
-
 ```
 
 ```{r}
+#| label: comp2
+
 metropolitan |>
   ggplot(aes(x = Year, y = prop_renewable, color = State)) +
   geom_point(alpha = 0.5) +
@@ -187,6 +196,8 @@ metropolitan |>
 ```
 
 ```{r}
+#| label: comp3
+
 rural |>
   group_by(State) |>
   ggplot(aes(x = Year, y = prop_renewable, color = State)) +
@@ -196,8 +207,6 @@ rural |>
   scale_color_viridis_d() +
   labs(y = "Proportion of Energy from Renewable Sources", 
        x = "Year", title = "Energy in Most Rural States")
-
-
 ```
 
 This dot plot with lines of best fit shows the 5 states with the lowest renewable energy consumption, and allows us to see how their consumption of renewable energy has changed over time.
@@ -205,6 +214,8 @@ This dot plot with lines of best fit shows the 5 states with the lowest renewabl
 Geographical location:
 
 ```{r}
+#| label: geo-location
+
 south <- data |>
 filter(State == "Alabama" |
          State == "Georgia" |
@@ -293,7 +304,6 @@ midwest |>
   scale_color_viridis_d() +
   labs(y = "Proportion of Energy from Renewable Sources", 
        x = "Year", title = "Energy in Midwest States")
-
 ```
 
 These graphs allow us to both compare the different regions in the US, and within each region see how the consumption of renewable energy by state has changed over time. With this, we can analyze trends and patterns by region.
