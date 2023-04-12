@@ -126,7 +126,8 @@ national_renewable_usage |>
        y = "Proportion of Renewable Energy Consumption")
 ```
 
-Here, we use a dot plot to demonstrate the change over time of renewable consumption. Additionally, we added a line of best fit in order to best see how the consumption changed over time.
+Here, we use a dot plot to demonstrate the change over time of renewable consumption. Additionally, we added a line of best fit in order to best see how the consumption changed over time. It is important to note here that it would not make sense to fit a model here because the graph is not linear.
+
 
 Energy proportion for top 5 states in 2019:
 
@@ -163,7 +164,7 @@ data |>
   geom_smooth(se = FALSE) +
   scale_color_viridis_d() +
     labs(y = "Proportion of Energy from Renewable Sources", 
-       x = "Year", title = "Energy in Most Metropolitan States")
+       x = "Year", title = "Energy in Top 5 Renewable Energy States")
 ```
 
 This dot plot with lines of best fit allows us to better visualize how these states consumption of renewable energy has increased over time.
@@ -258,7 +259,7 @@ filter(State == "California" |
          State == "Utah" |
          State == "Arizona" |
          State == "" |
-         State == "Utah" )|>
+         State == "Utah") |>
   group_by(State)
 
 midwest <- data |>
@@ -316,21 +317,36 @@ midwest |>
 
 These graphs allow us to both compare the different regions in the US, and within each region see how the consumption of renewable energy by state has changed over time. With this, we can analyze trends and patterns by region.
 
-Hypothesis Testing:
+Interaction Model:
 
-Is there a significant difference in the mean annual consumption across all states of coal in the United States changed before and after the the 21st century.
+Model proportion of renewable energy vs region and time to predict proportion of renewable energy in the future.
+
+y = prop_renewable, x_1 = region, x_2 = time
+
+**delete this above^^ before final submission**
 
 ```{r}
+#| label: create-region-variable
+south_state <- c("Alabama", "Georgia", "Mississippi", "Texas", "Louisiana",
+                 "Oklahoma", "Arkansas", "South Carolina")
+northeast_state <- c("Maine", "Massachusetts", "Vermont", "New Hampshire", 
+                     "Connecticut", "Pennsylvania", "New York", "New Jersey",
+                     "Maryland", "District of Columbia", "Rhode Island", 
+                     "Delaware")
+west_state <- c("California", "Washington", "Oregon", "Colorado", "Utah",
+                "Arizona", "", "Utah")
 
-south |>
-  group_by(State) |>
-  summarize(mean_consumption = mean(prop_renewable))
+data <- data |>
+  mutate(region = if_else(State %in% south_state,
+                          "south", if_else(State %in% northeast_state, 
+                                           "northeast", if_else(State %in%
+                                                                  west_state,
+                                                                "west",
+                                                                "midwest"))))
 
-null_dist <- south |>
-  specify(response = prop_renewable) |>
-  hypothesize(null = "point", mu = 60) |>
-  generate(reps = 1000, type = "bootstrap") |>
-  calculate(stat = "mean")
 ```
+
+
+
 
 **Results** Our data confirms several important pieces of information. Primarily, renewable energy consumption since 1960 has overall increased significantly. Similarly, California, Washington D.C., Hawaii, Massachusetts, and Nevada use the highest proportion of renewable energy, with Hawaii having the highest proportion of the 5. Just like the nation as a whole, these states have seen a significant increase in renewable energy usage, sharply increasing in the early 2000s. When comparing metropolitan to rural areas, overall metropolitan areas have a much higher proportion of renewable energies compared to rural areas. Furthermore, metropolitan areas over the last years have increased their proportion of renewable energies, while rural areas have stayed stagnant or decreased. In terms of geographical location, the northeastern states by far have the highest proportion of renewable energy. The southern states, on the other hand, have the worst proportion of renewable energy.
