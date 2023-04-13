@@ -43,7 +43,7 @@ Ratner, M., Bracmort, K., Brown, P., Campbell, R. J., Holt, M., Humphries, M., P
 #| label: data-loading
 
 library(tidyverse)
-data <- read_csv("~/Final Project/data/energy.csv")
+data <- read_csv("~/project-banana-boat/data/energy.csv")
 ```
 
 Creating variables total energy, total renewable energy, and proportion of renewable energy consumption:
@@ -344,6 +344,35 @@ data <- data |>
                                                                 "west",
                                                                 "midwest"))))
 
+```
+
+
+```{r}
+#| label: create-model
+library(tidymodels)
+
+model <- linear_reg() |>
+  set_engine("lm") |>
+  fit(prop_renewable ~ Year * region, data = data)
+
+tidy(model)
+```
+
+Rsquared values:
+
+```{r}
+#| label: model-performance
+glance(model)$r.squared
+glance(model)$adj.r.squared
+glance(model)$AIC
+```
+
+Predicting renewable energy proportions:
+
+```{r}
+#| label: predictions
+
+predict(model, data.frame(Year = 2030, region = "west"))
 ```
 
 
