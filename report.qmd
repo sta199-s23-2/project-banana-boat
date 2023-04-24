@@ -43,7 +43,7 @@ Ratner, M., Bracmort, K., Brown, P., Campbell, R. J., Holt, M., Humphries, M., P
 #| label: data-loading
 
 library(tidyverse)
-data <- read_csv("~/project-banana-boat/data/energy.csv")
+data <- read_csv("~/Final Project/data/energy.csv")
 ```
 
 Creating variables total energy, total renewable energy, and proportion of renewable energy consumption:
@@ -318,6 +318,40 @@ These graphs allow us to both compare the different regions in the US, and withi
 
 **Interaction Model:**
 
+Model proportion of national renewable energy vs time to predict proportion of renewable energy in the future.
+
+```{r}
+#| label: create-national-model
+model_national <- linear_reg() |>
+  set_engine("lm") |>
+  fit(prop_renewable_all_states ~ Year, data = national_renewable_usage)
+
+tidy(model_national)
+```
+
+$\widehat{prop\_renewable\_national} = -3.43e^{-2}+1.76e^{-5} * Year$
+
+Interpret our model:
+
+We estimate the proportion of renewable energy a state uses to increase $1.67e^{-05}$ every year.
+
+Rsquared values:
+
+```{r}
+#| label: national-model-performance
+glance(model_national)$r.squared
+glance(model_national)$adj.r.squared
+glance(model_national)$AIC
+```
+
+Predicting renewable energy proportions in 2030:
+
+```{r}
+#| label: predictions
+predict(model_national, data.frame(Year = 2030))
+
+```
+
 Model proportion of renewable energy vs region and time to predict proportion of renewable energy in the future.
 
 ```{r}
@@ -360,7 +394,7 @@ model <- linear_reg() |>
 tidy(model)
 ```
 
-$\hat{prop\_renewable} = -5.05e^{-2}+2.57e^{-5} * Year + 1.34e^{-1}*northeast + 5.18e^{-2} * south + 6.55e^{-3} * west + 6.6e^{-5}*Year*northeast -2.65e^{-5}*Year*south -3.4e^{-6}*Year*west$
+$\widehat{prop\_renewable} = -5.05e^{-2}+2.57e^{-5} * Year + 1.34e^{-1}*northeast + 5.18e^{-2} * south + 6.55e^{-3} * west + 6.6e^{-5}*Year*northeast -2.65e^{-5}*Year*south -3.4e^{-6}*Year*west$
 
 {1 if south; 0 if not} {1 if northeast; 0 if not} {1 if west; 0 if not}
 
