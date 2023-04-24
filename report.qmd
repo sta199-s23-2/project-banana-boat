@@ -128,96 +128,12 @@ national_renewable_usage |>
 
 Here, we use a dot plot to demonstrate the change over time of renewable consumption. Additionally, we added a line of best fit in order to best see how the consumption changed over time. It is important to note here that it would not make sense to fit a model here because the graph is not linear.
 
-Energy proportion for top 5 states in 2019:
-
-```{r}
-#| label: top5-energy
-
-data |>
-  filter(Year == 2019) |>
-  arrange(desc(prop_renewable)) |>
-  slice(1:5) |>
-  ggplot(aes(x = State, y = prop_renewable)) +
-  geom_col(color = "black", fill = "lightblue") +
-  labs(title = "Top Five States for Renewable Energy consumption in 2019",
-       y = "Renewable Energy Consumption in 2019 (Proportion)")
-```
-
 Here, we use a bar graph in order to compare each states renewable energy consumption in 2019.
 
 Track these states over time:
 
-```{r}
-#| label: tracker
-
-data |>
-  filter(State == "California" |
-         State == "District of Columbia" |
-         State == "Hawaii" |
-         State == "Massachusetts" |
-         State == "Nevada") |>
-  group_by(State) |>
-  ggplot(aes(x = Year, y = prop_renewable, color = State)) +
-  geom_point(alpha = 0.5) +
-  scale_color_viridis_d() +
-  geom_smooth(se = FALSE) +
-  scale_color_viridis_d() +
-    labs(y = "Proportion of Energy from Renewable Sources", 
-       x = "Year", title = "Energy in Top 5 Renewable Energy States")
+```{"}
 ```
-
-This dot plot with lines of best fit allows us to better visualize how these states consumption of renewable energy has increased over time.
-
-Metropolitan vs rural:
-
-```{r}
-#| label: comparison
-
-metropolitan <- data |>
-  filter(State == "California" |
-         State == "District of Columbia" |
-         State == "New York" |
-         State == "Massachusetts" |
-         State == "Texas") |>
-  group_by(State)
-
-rural <- data |>
-filter(State == "Maine" |
-         State == "Vermont" |
-         State == "Mississippi" |
-         State == "Montana" |
-         State == "West Virginia") |>
-  group_by(State)
-```
-
-```{r}
-#| label: comp2
-
-metropolitan |>
-  ggplot(aes(x = Year, y = prop_renewable, color = State)) +
-  geom_point(alpha = 0.5) +
-  scale_color_viridis_d() +
-  geom_smooth(se = FALSE) +
-  scale_color_viridis_d() +
-  labs(y = "Proportion of Energy from Renewable Sources", 
-       x = "Year", title = "Energy in Most Metropolitan States")
-```
-
-```{r}
-#| label: comp3
-
-rural |>
-  group_by(State) |>
-  ggplot(aes(x = Year, y = prop_renewable, color = State)) +
-  geom_point(alpha = 0.5) +
-  scale_color_viridis_d() +
-  geom_smooth(se = FALSE) +
-  scale_color_viridis_d() +
-  labs(y = "Proportion of Energy from Renewable Sources", 
-       x = "Year", title = "Energy in Most Rural States")
-```
-
-This dot plot with lines of best fit shows the 5 states with the lowest renewable energy consumption, and allows us to see how their consumption of renewable energy has changed over time.
 
 Geographical location:
 
@@ -311,10 +227,8 @@ midwest |>
   geom_smooth(se = FALSE) +
   scale_color_viridis_d() +
   labs(y = "Proportion of Energy from Renewable Sources", 
-       x = "Year", title = "Energy in Midwest States")
+       x = "Year", title = "Energy in Midwest States"
 ```
-
-These graphs allow us to both compare the different regions in the US, and within each region see how the consumption of renewable energy by state has changed over time. With this, we can analyze trends and patterns by region.
 
 **Interaction Model:**
 
@@ -428,6 +342,149 @@ predict(model, data.frame(Year = 2030, region = "west"))
 predict(model, data.frame(Year = 2030, region = "south"))
 predict(model, data.frame(Year = 2030, region = "northeast"))
 predict(model, data.frame(Year = 2030, region = "midwest"))
+```
+
+**Political Affiliations:**
+
+```{r}
+#| label: political-datasets
+
+democrat <- data |>
+  filter(State == "California" |
+         State == "Oregon" |
+         State == "Washington" |
+         State == "Nevada" |
+         State == "Colorado" |
+         State == "New Mexico" |
+         State == "Minnesota" |
+         State == "Iowa" |
+         State == "Hawaii" |
+         State == "Wisconsin" |
+         State == "Illonois" |
+         State == "Michigan" |
+         State == "Florida" |
+         State == "Virginia" |
+         State == "Maryland" |
+         State == "Delaware" |
+         State == "Pennsylvania" |
+         State == "New Jersey" |
+         State == "New York" |
+         State == "Massachussetts" |
+         State == "Rhode Island" |
+         State == "Connecticut" |
+         State == "Vermont" |
+         State == "New Hampshire" |
+         State == "Maine") |>
+  group_by(State)
+
+republican <- data |>
+filter(State == "Alaska" |
+         State == "Idaho" |
+         State == "Montana" |
+         State == "Wyoming" |
+         State == "North Dakota" | 
+         State == "South Dakota" |
+         State == "Nebraska" |
+         State == "Kansas" |
+         State == "Oklahoma" |
+         State == "Texas" |
+         State == "Missouri" |
+         State == "Arkansas" |
+         State == "Louisiana" |
+         State == "Mississippi" |
+         State == "Alabama" |
+         State == "Tennessee" |
+         State == "Kentucky" |
+         State == "Indiana" |
+         State == "Ohio" |
+         State == "West Virginia" |
+         State == "Georgia" |
+         State == "South Carolina" |
+         State == "North Carolina") |>
+  group_by(State)
+```
+
+```{r}
+#| label: deomcrat-graph
+
+democrat |>
+  ggplot(aes(x = Year, y = prop_renewable, color = State)) +
+  geom_point(alpha = 0.5) +
+  scale_color_viridis_d() +
+  geom_smooth(se = FALSE) +
+  scale_color_viridis_d() +
+  labs(y = "Proportion of Energy from Renewable Sources", 
+       x = "Year", title = "Energy in Democratic States")
+```
+
+```{r}
+#| label: republican-graph
+
+republican |>
+  ggplot(aes(x = Year, y = prop_renewable, color = State)) +
+  geom_point(alpha = 0.5) +
+  scale_color_viridis_d() +
+  geom_smooth(se = FALSE) +
+  scale_color_viridis_d() +
+  labs(y = "Proportion of Energy from Renewable Sources", 
+       x = "Year", title = "Energy in Republican States")
+```
+
+```{r}
+#| label: political-variables
+
+democrat_state <- c("California", "Oregon", "Washington", "Nevada", 
+                      "Colorado", "New Mexico", "Minnesota", "Iowa", 
+                      "Hawaii", "Wisconsin", "Illonois", "Michigan", 
+                      "Florida", "Virginia", "Maryland", "Delaware", 
+                      "Pennsylvania", "New Jersey", "New York", 
+                      "Massachussetts", "Rhode Island", "Connecticut", 
+                      "Vermont", "New Hampshire", "Maine")
+  
+
+republican_state <- c("Alaska", "Idaho", "Montana", "Wyoming", "North Dakota",
+                      "South Dakota", "Nebraska", "Kansas", "Oklahoma",
+                      "Texas", "Missouri", "Arkansas", "Louisiana",
+                      "Mississippi", "Alabama", "Tennessee", "Kentucky",
+                      "Indiana", "Ohio", "West Virginia", "Georgia",
+                      "South Carolina", "North Carolina")
+```
+
+```{r}
+#| label: political-model-data
+
+data_political <- data |>
+  mutate(party = if_else(State == democrat_state, 
+                           "Democratic State", 
+                           "Republican State"))
+```
+
+```{r}
+#| label: political-model
+
+model_political <- linear_reg() |>
+  set_engine("lm") |>
+  fit(prop_renewable ~ Year * party, data = data_political)
+
+tidy(model_political)
+```
+
+\$\\widehat{prop\\\_renewable}=-1.41e\^{-2}+8.54e\^{-6}+1.85e\^{-2}\*Republican State - -9.92e\^{-6}\*Year\*Republican State\$
+
+{1 if Republican state; 0 if Democratic state}
+
+Holding region constant, we estimate the proportion of renewable energy a state uses to increase \$8.54e\^{-05}\$ every year.
+
+Holding year constant, we estimate the proportion of renewable energy a state uses to increase \$0.01847306\$ for the Democratic states.
+
+Holding year constant, we estimate the proportion of renewable energy a state uses to increase \$-0.014067232\$ for the South region.
+
+```{r}
+#| label: political-r-squared
+
+glance(model_political)$r.squared
+glance(model_political)$adj.r.squared
+glance(model_political)$AIC
 ```
 
 **Results** Our data confirms several important pieces of information. Primarily, renewable energy consumption since 1960 has overall increased significantly. Similarly, California, Washington D.C., Hawaii, Massachusetts, and Nevada use the highest proportion of renewable energy, with Hawaii having the highest proportion of the 5. Just like the nation as a whole, these states have seen a significant increase in renewable energy usage, sharply increasing in the early 2000s. When comparing metropolitan to rural areas, overall metropolitan areas have a much higher proportion of renewable energies compared to rural areas. Furthermore, metropolitan areas over the last years have increased their proportion of renewable energies, while rural areas have stayed stagnant or decreased. In terms of geographical location, the northeastern states by far have the highest proportion of renewable energy. The southern states, on the other hand, have the worst proportion of renewable energy.
