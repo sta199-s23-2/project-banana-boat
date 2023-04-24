@@ -330,6 +330,8 @@ northeast_state <- c("Maine", "Massachusetts", "Vermont", "New Hampshire",
                      "Delaware")
 west_state <- c("California", "Washington", "Oregon", "Colorado", "Utah",
                 "Arizona", "", "Utah")
+midwest_state <- c("Montana", "Minnesota", "Nebraska", "Kansas", "Iowa", 
+                   "Missouri", "Idaho", "Illinois", "Michigan")
 
 data <- data |>
   mutate(region = if_else(State %in% south_state,
@@ -337,7 +339,13 @@ data <- data |>
                                            "northeast", if_else(State %in%
                                                                   west_state,
                                                                 "west",
-                                                                "midwest"))))
+                                                                if_else(
+                                                                  State %in%
+                                                                    midwest_state,
+                                                                  "midwest",
+                                                                  "none"
+                                                                ))))) |>
+  filter(region != "none")
 
 ```
 
@@ -352,19 +360,21 @@ model <- linear_reg() |>
 tidy(model)
 ```
 
-$\hat{prop\_renewable} = -5.6e^{-2}+2.88e^{-5} * Year + 1.34e^{-1}*northeast + 5.18e^{-2} * south + 6.55e^{-3} * west + 6.6e^{-5}*Year*northeast -2.65e^{-5}*Year*south -3.4e^{-6}*Year*west$
+$\hat{prop\_renewable} = -5.05e^{-2}+2.57e^{-5} * Year + 1.34e^{-1}*northeast + 5.18e^{-2} * south + 6.55e^{-3} * west + 6.6e^{-5}*Year*northeast -2.65e^{-5}*Year*south -3.4e^{-6}*Year*west$
 
 {1 if south; 0 if not} {1 if northeast; 0 if not} {1 if west; 0 if not}
 
 Interpreting our model:
 
-Holding region constant, we estimate the proportion of renewable energy a state uses to increase $2.88e^{-05}$ every year.
+Holding region constant, we estimate the proportion of renewable energy a state uses to increase $2.57e^{-05}$ every year.
 
-Holding year constant, we estimate the proportion of renewable energy a state uses to increase $0.1343326$ for the **Northeast** reason compared to the Midwest region of the United States.
+Holding year constant, we estimate the proportion of renewable energy a state uses to increase $0.07808661$ for the **Northeast** region
 
-Holding year constant, we estimate the proportion of renewable energy a state uses to increase $0.05173856$ for the **South** reason compared to the Midwest region of the United States.
+Holding year constant, we estimate the proportion of renewable energy a state uses to increase $-0.00450742$ for the **South** region.
 
-Holding year constant, we estimate the proportion of renewable energy a state uses to increase $0.006554698$ for the **West** reason compared to the Midwest region of the United States.
+Holding year constant, we estimate the proportion of renewable energy a state uses to increase $-0.04969127$ for the **West** region.
+
+Holding year constant, we estimate the proportion of renewable energy a state uses to decrease $-0.05054079$ for the **Midwest** region.
 
 Rsquared values:
 
