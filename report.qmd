@@ -128,7 +128,6 @@ national_renewable_usage |>
 
 Here, we use a dot plot to demonstrate the change over time of renewable consumption. Additionally, we added a line of best fit in order to best see how the consumption changed over time. It is important to note here that it would not make sense to fit a model here because the graph is not linear.
 
-
 Energy proportion for top 5 states in 2019:
 
 ```{r}
@@ -317,13 +316,9 @@ midwest |>
 
 These graphs allow us to both compare the different regions in the US, and within each region see how the consumption of renewable energy by state has changed over time. With this, we can analyze trends and patterns by region.
 
-Interaction Model:
+**Interaction Model:**
 
 Model proportion of renewable energy vs region and time to predict proportion of renewable energy in the future.
-
-y = prop_renewable, x_1 = region, x_2 = time
-
-**delete this above^^ before final submission**
 
 ```{r}
 #| label: create-region-variable
@@ -346,7 +341,6 @@ data <- data |>
 
 ```
 
-
 ```{r}
 #| label: create-model
 library(tidymodels)
@@ -358,6 +352,20 @@ model <- linear_reg() |>
 tidy(model)
 ```
 
+$\hat{prop\_renewable} = -5.6e^{-2}+2.88e^{-5} * Year + 1.34e^{-1}*northeast + 5.18e^{-2} * south + 6.55e^{-3} * west + 6.6e^{-5}*Year*northeast -2.65e^{-5}*Year*south -3.4e^{-6}*Year*west$
+
+{1 if south; 0 if not} {1 if northeast; 0 if not} {1 if west; 0 if not}
+
+Interpreting our model:
+
+Holding region constant, we estimate the proportion of renewable energy a state uses to increase $2.88e^{-05}$ every year.
+
+Holding year constant, we estimate the proportion of renewable energy a state uses to increase $0.1343326$ for the **Northeast** reason compared to the Midwest region of the United States.
+
+Holding year constant, we estimate the proportion of renewable energy a state uses to increase $0.05173856$ for the **South** reason compared to the Midwest region of the United States.
+
+Holding year constant, we estimate the proportion of renewable energy a state uses to increase $0.006554698$ for the **West** reason compared to the Midwest region of the United States.
+
 Rsquared values:
 
 ```{r}
@@ -367,15 +375,15 @@ glance(model)$adj.r.squared
 glance(model)$AIC
 ```
 
-Predicting renewable energy proportions:
+Predicting renewable energy proportions in 2030:
 
 ```{r}
 #| label: predictions
 
 predict(model, data.frame(Year = 2030, region = "west"))
+predict(model, data.frame(Year = 2030, region = "south"))
+predict(model, data.frame(Year = 2030, region = "northeast"))
+predict(model, data.frame(Year = 2030, region = "midwest"))
 ```
-
-
-
 
 **Results** Our data confirms several important pieces of information. Primarily, renewable energy consumption since 1960 has overall increased significantly. Similarly, California, Washington D.C., Hawaii, Massachusetts, and Nevada use the highest proportion of renewable energy, with Hawaii having the highest proportion of the 5. Just like the nation as a whole, these states have seen a significant increase in renewable energy usage, sharply increasing in the early 2000s. When comparing metropolitan to rural areas, overall metropolitan areas have a much higher proportion of renewable energies compared to rural areas. Furthermore, metropolitan areas over the last years have increased their proportion of renewable energies, while rural areas have stayed stagnant or decreased. In terms of geographical location, the northeastern states by far have the highest proportion of renewable energy. The southern states, on the other hand, have the worst proportion of renewable energy.
