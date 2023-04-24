@@ -335,7 +335,7 @@ Interpret our model:
 
 We estimate the proportion of renewable energy a state uses to increase $1.67e^{-05}$ every year.
 
-Rsquared values:
+Model fit:
 
 ```{r}
 #| label: national-model-performance
@@ -410,7 +410,7 @@ Holding year constant, we estimate the proportion of renewable energy a state us
 
 Holding year constant, we estimate the proportion of renewable energy a state uses to decrease $-0.05054079$ for the **Midwest** region.
 
-Rsquared values:
+Model fit:
 
 ```{r}
 #| label: model-performance
