@@ -29,21 +29,13 @@ Other energy sources: natural gas, coal, as well as any other sources of energy.
 
 Groups of interest: states, expenditures and consumption of renewable energy and other energy sources, etc. Our goal is to study the effects of these aforementioned variables to learn about consumption habits and technological specialization of different states.
 
-## **Literature Review**
-
-Ratner, M., Bracmort, K., Brown, P., Campbell, R. J., Holt, M., Humphries, M., Pirog, R., & Yacobucci, B. D. (2018, November 5). U.S. Energy in the 21st Century: A Primer. The Congressional Research Service. Retrieved March 10, 2023, from https://crsreports.congress.gov/product/pdf/R/R46723
-
-**Summary:** This article dives into energy usage in the United States and goes into detail about recent trends of energy usage. The text claims that, despite energy usage remaining relatively constant, the U.S. has shifted away from non-renewable energy sources (oil and coal) and towards more renewable sources of energy. The article makes the claim that natural gas and renewable energy consumption has increased, oil and nuclear power consumption didn't change and coal decreased. In the 21st century, renewable energy consumption has almost doubled, making its increasing importance obvious. Despite this, renewable energy still only makes up 11% of U.S. energy consumption.
-
-**Difference from Research Question:** One big difference is that the article talks about general trends in the U.S. and does discuss any of the costs. Also, the article does not take into account the factors that could provide reasoning for differences in renewable energy usage by state, which we plan to look into.
-
 ## **Methodology**
 
 ```{r}
 #| label: data-loading
 
 library(tidyverse)
-data <- read_csv("~/Final Project/data/energy.csv")
+data <- read_csv("~/project-banana-boat/data/energy.csv")
 ```
 
 Creating variables total energy, total renewable energy, and proportion of renewable energy consumption:
@@ -126,14 +118,98 @@ national_renewable_usage |>
        y = "Proportion of Renewable Energy Consumption")
 ```
 
-Here, we use a dot plot to demonstrate the change over time of renewable consumption. Additionally, we added a line of best fit in order to best see how the consumption changed over time. It is important to note here that it would not make sense to fit a model here because the graph is not linear.
+Here, we use a dot plot to demonstrate the change over time of renewable consumption. Additionally, we added a line of best fit in order to best see how the consumption changed over time.
+
+Energy proportion for top 5 states in 2019:
+
+```{r}
+#| label: top5-energy
+
+data |>
+  filter(Year == 2019) |>
+  arrange(desc(prop_renewable)) |>
+  slice(1:5) |>
+  ggplot(aes(x = State, y = prop_renewable)) +
+  geom_col(color = "black", fill = "lightblue") +
+  labs(title = "Top Five States for Renewable Energy consumption in 2019",
+       y = "Renewable Energy Consumption in 2019 (Proportion)")
+```
 
 Here, we use a bar graph in order to compare each states renewable energy consumption in 2019.
 
 Track these states over time:
 
-``` {"}
+```{r}
+#| label: tracker
+
+data |>
+  filter(State == "California" |
+         State == "District of Columbia" |
+         State == "Hawaii" |
+         State == "Massachusetts" |
+         State == "Nevada") |>
+  group_by(State) |>
+  ggplot(aes(x = Year, y = prop_renewable, color = State)) +
+  geom_point(alpha = 0.5) +
+  scale_color_viridis_d() +
+  geom_smooth(se = FALSE) +
+  scale_color_viridis_d() +
+    labs(y = "Proportion of Energy from Renewable Sources", 
+       x = "Year", title = "Energy in Most Metropolitan States")
 ```
+
+This dot plot with lines of best fit allows us to better visualize how these states consumption of renewable energy has increased over time.
+
+Metropolitan vs rural:
+
+```{r}
+#| label: comparison
+
+metropolitan <- data |>
+  filter(State == "California" |
+         State == "District of Columbia" |
+         State == "New York" |
+         State == "Massachusetts" |
+         State == "Texas") |>
+  group_by(State)
+
+rural <- data |>
+filter(State == "Maine" |
+         State == "Vermont" |
+         State == "Mississippi" |
+         State == "Montana" |
+         State == "West Virginia") |>
+  group_by(State)
+```
+
+```{r}
+#| label: comp2
+
+metropolitan |>
+  ggplot(aes(x = Year, y = prop_renewable, color = State)) +
+  geom_point(alpha = 0.5) +
+  scale_color_viridis_d() +
+  geom_smooth(se = FALSE) +
+  scale_color_viridis_d() +
+  labs(y = "Proportion of Energy from Renewable Sources", 
+       x = "Year", title = "Energy in Most Metropolitan States")
+```
+
+```{r}
+#| label: comp3
+
+rural |>
+  group_by(State) |>
+  ggplot(aes(x = Year, y = prop_renewable, color = State)) +
+  geom_point(alpha = 0.5) +
+  scale_color_viridis_d() +
+  geom_smooth(se = FALSE) +
+  scale_color_viridis_d() +
+  labs(y = "Proportion of Energy from Renewable Sources", 
+       x = "Year", title = "Energy in Most Rural States")
+```
+
+This dot plot with lines of best fit shows the 5 states with the lowest renewable energy consumption, and allows us to see how their consumption of renewable energy has changed over time.
 
 Geographical location:
 
@@ -174,7 +250,7 @@ filter(State == "California" |
          State == "Utah" |
          State == "Arizona" |
          State == "" |
-         State == "Utah") |>
+         State == "Utah" )|>
   group_by(State)
 
 midwest <- data |>
@@ -230,9 +306,9 @@ midwest |>
        x = "Year", title = "Energy in Midwest States")
 ```
 
-**Interaction Model:**
+These graphs allow us to both compare the different regions in the US, and within each region see how the consumption of renewable energy by state has changed over time. With this, we can analyze trends and patterns by region.
 
-Model proportion of national renewable energy vs time to predict proportion of renewable energy in the future.
+## **Results**
 
 ```{r}
 #| label: create-national-model
