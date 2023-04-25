@@ -132,7 +132,7 @@ Here, we use a bar graph in order to compare each states renewable energy consum
 
 Track these states over time:
 
-```{"}
+``` {"}
 ```
 
 Geographical location:
