@@ -227,7 +227,7 @@ midwest |>
   geom_smooth(se = FALSE) +
   scale_color_viridis_d() +
   labs(y = "Proportion of Energy from Renewable Sources", 
-       x = "Year", title = "Energy in Midwest States"
+       x = "Year", title = "Energy in Midwest States")
 ```
 
 **Interaction Model:**
@@ -261,7 +261,7 @@ glance(model_national)$AIC
 Predicting renewable energy proportions in 2030:
 
 ```{r}
-#| label: predictions
+#| label: prediction-national
 predict(model_national, data.frame(Year = 2030))
 
 ```
@@ -336,7 +336,7 @@ glance(model)$AIC
 Predicting renewable energy proportions in 2030:
 
 ```{r}
-#| label: predictions
+#| label: prediction-regional
 
 predict(model, data.frame(Year = 2030, region = "west"))
 predict(model, data.frame(Year = 2030, region = "south"))
