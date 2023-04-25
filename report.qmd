@@ -477,7 +477,7 @@ tidy(model_political)
 
 {1 if Republican state; 0 if Democratic state}
 
-Holding region constant, we estimate the proportion of renewable energy a state uses to increase \$8.54e\^{-05}\$ every year.
+Holding party constant, we estimate the proportion of renewable energy a state uses to increase \$8.54e\^{-05}\$ every year.
 
 Holding year constant, we estimate the proportion of renewable energy a state uses to increase \$0.01847306\$ for the Democratic states.
 
@@ -492,5 +492,12 @@ glance(model_political)$AIC
 ```
 
 The R squared and adjusted R squared for this model is very low, meaning that it is not a very good model for determining use of renewable energy. The AIC further confirms it by showing that there are many other explanatory variables. Therefore, although it is likely that political party plays a part in the use of renewable energy, there are many other factors that play an important part.
+
+```{r}
+#| label: political-predict
+
+predict(model_political, data.frame(Year = 2030, party = "Democratic State"))
+predict(model_political, data.frame(Year = 2030, party = "Republican State"))
+```
 
 **Results** Our data confirms several important pieces of information. Primarily, renewable energy consumption since 1960 has overall increased significantly. Similarly, California, Washington D.C., Hawaii, Massachusetts, and Nevada use the highest proportion of renewable energy, with Hawaii having the highest proportion of the 5. Just like the nation as a whole, these states have seen a significant increase in renewable energy usage, sharply increasing in the early 2000s. When comparing metropolitan to rural areas, overall metropolitan areas have a much higher proportion of renewable energies compared to rural areas. Furthermore, metropolitan areas over the last years have increased their proportion of renewable energies, while rural areas have stayed stagnant or decreased. In terms of geographical location, the northeastern states by far have the highest proportion of renewable energy. The southern states, on the other hand, have the worst proportion of renewable energy.
