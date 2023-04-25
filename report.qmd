@@ -404,6 +404,8 @@ filter(State == "Alaska" |
   group_by(State)
 ```
 
+These states were grouped by democratic and republic based on how they voted in 2018 because this dataset ended in 2019, and 2018 was the most recent nationwide voting before that.
+
 ```{r}
 #| label: deomcrat-graph
 
@@ -429,6 +431,8 @@ republican |>
   labs(y = "Proportion of Energy from Renewable Sources", 
        x = "Year", title = "Energy in Republican States")
 ```
+
+By comparing these two graphs, we can see that the democratic states overall use a higher proportion of renewable energy than the republican states. Most of the republican states have been slightly increasing since 2000, but have still most of them in 2019 ranged from a proportion of 0.000 to 0.002, with most states being around 0.001 and Idaho being an outlier at a proportion of 0.004. The democratic states, on the other hand, range from 0.00 to 0.008, with most states being around 0.003. While these both have very lower porportions of renewable energy, the democratic states on average have a higher proportional of renewable energy than the republican states.
 
 ```{r}
 #| label: political-variables
@@ -486,5 +490,7 @@ glance(model_political)$r.squared
 glance(model_political)$adj.r.squared
 glance(model_political)$AIC
 ```
+
+The R squared and adjusted R squared for this model is very low, meaning that it is not a very good model for determining use of renewable energy. The AIC further confirms it by showing that there are many other explanatory variables. Therefore, although it is likely that political party plays a part in the use of renewable energy, there are many other factors that play an important part.
 
 **Results** Our data confirms several important pieces of information. Primarily, renewable energy consumption since 1960 has overall increased significantly. Similarly, California, Washington D.C., Hawaii, Massachusetts, and Nevada use the highest proportion of renewable energy, with Hawaii having the highest proportion of the 5. Just like the nation as a whole, these states have seen a significant increase in renewable energy usage, sharply increasing in the early 2000s. When comparing metropolitan to rural areas, overall metropolitan areas have a much higher proportion of renewable energies compared to rural areas. Furthermore, metropolitan areas over the last years have increased their proportion of renewable energies, while rural areas have stayed stagnant or decreased. In terms of geographical location, the northeastern states by far have the highest proportion of renewable energy. The southern states, on the other hand, have the worst proportion of renewable energy.
