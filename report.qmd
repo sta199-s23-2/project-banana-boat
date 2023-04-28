@@ -285,6 +285,8 @@ midwest |>
        x = "Year", title = "Energy in Midwest States")
 ```
 
+\*The scale on the y axis of each of the regional graphs differs based on the magnitude of its respective data, so when comparing these graphs take this into consideration as the data in certain graphs represent smaller changes despite how it may look on the graph.
+
 These graphs allow us to visualize and compare the states by region. The states were grouped into four regions, Northeast, West, Midwest, and South. Overall, these graphs show that the Northeast as a region has the highest proportion of renewable energy, followed by the West, the South, then the Midwest. There are a few notable outliers, especially Hawaii in the West, which has the highest renewable energy output of any state, and a spike in 2000 from North Carolina and Tennessee in the South.
 
 Regional model:
@@ -472,6 +474,8 @@ republican |>
   labs(y = "Proportion of Energy from Renewable Sources", 
        x = "Year", title = "Energy in Republican States")
 ```
+
+\*The scales on the y axis of the democratic graph is approximately 10 times greater than that of the republican graph, so when comparing take this into consideration as the data in the democratic graph represents more change than the republican graph.
 
 These graphs allow us to visualize and compare the proportion of renewable energy used by republican and democratic states. These graphs demonstrate that overall the democratic states use more renewable energy than republican states. There are a few notable outliers, specifically Maine in the democratic states and Idaho in the republican states.
 
