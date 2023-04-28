@@ -33,6 +33,7 @@ Groups of interest: states, regions, political parties, expenditures and consump
 #| label: data-loading
 
 library(tidyverse)
+library(tidymodels)
 data <- read_csv("~/Final Project/data/energy.csv")
 ```
 
