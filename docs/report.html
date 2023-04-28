@@ -20,69 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -208,7 +145,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="methodology" class="level2">
 <h2 class="anchored" data-anchor-id="methodology"><strong>Methodology</strong></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
 ✔ ggplot2 3.4.0      ✔ purrr   1.0.0 
@@ -217,17 +153,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ✔ readr   2.1.3      ✔ forcats 0.5.2 
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching packages ────────────────────────────────────── tidymodels 1.0.0 ──
+✖ dplyr::lag()    masks stats::lag()
+── Attaching packages ────────────────────────────────────── tidymodels 1.0.0 ──
+
 ✔ broom        1.0.2     ✔ rsample      1.1.1
 ✔ dials        1.1.0     ✔ tune         1.0.1
 ✔ infer        1.0.4     ✔ workflows    1.1.2
 ✔ modeldata    1.0.1     ✔ workflowsets 1.0.0
 ✔ parsnip      1.0.3     ✔ yardstick    1.1.0
 ✔ recipes      1.0.3     
+
 ── Conflicts ───────────────────────────────────────── tidymodels_conflicts() ──
 ✖ scales::discard() masks purrr::discard()
 ✖ dplyr::filter()   masks stats::filter()
@@ -235,11 +170,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ✖ dplyr::lag()      masks stats::lag()
 ✖ yardstick::spec() masks readr::spec()
 ✖ recipes::step()   masks stats::step()
-• Use tidymodels_prefer() to resolve common conflicts.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"~/Final Project/data/energy.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 3060 Columns: 84
+• Learn how to get started at https://www.tidymodels.org/start/
+
+Rows: 3060 Columns: 84
 ── Column specification ────────────────────────────────────────────────────────
 Delimiter: ","
 chr  (1): State
@@ -251,71 +184,14 @@ dbl (83): Year, Production.Coal, Consumption.Commercial.Coal, Consumption.Co...
 </div>
 <p>Creating variables total energy, total renewable energy, and proportion of renewable energy consumption:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total_energy =</span> Consumption.Commercial.Coal <span class="sc">+</span> </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                        <span class="st">`</span><span class="at">Consumption.Commercial.Distillate Fuel Oil</span><span class="st">`</span> <span class="sc">+</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                        Consumption.Commercial.Geothermal <span class="sc">+</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                        Consumption.Commercial.Hydropower <span class="sc">+</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>                        Consumption.Commercial.Kerosene <span class="sc">+</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>                        Consumption.Commercial.Petroleum <span class="sc">+</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>                        <span class="st">`</span><span class="at">Consumption.Commercial.Natural Gas</span><span class="st">`</span> <span class="sc">+</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>                        Consumption.Commercial.Solar <span class="sc">+</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>                        Consumption.Commercial.Wind <span class="sc">+</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>                        <span class="st">`</span><span class="at">Consumption.Electric Power.Coal</span><span class="st">`</span> <span class="sc">+</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>                        <span class="st">`</span><span class="at">Consumption.Electric Power.Distillate Fuel Oil</span><span class="st">`</span> <span class="sc">+</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>                        <span class="st">`</span><span class="at">Consumption.Electric Power.Natural Gas</span><span class="st">`</span> <span class="sc">+</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>                        Consumption.Industrial.Coal <span class="sc">+</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>                        <span class="st">`</span><span class="at">Consumption.Industrial.Distillate Fuel Oil</span><span class="st">`</span> <span class="sc">+</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>                         Consumption.Industrial.Geothermal <span class="sc">+</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>                         Consumption.Industrial.Hydropower <span class="sc">+</span></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>                         Consumption.Industrial.Kerosene <span class="sc">+</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>                         Consumption.Industrial.Petroleum <span class="sc">+</span></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>                         <span class="st">`</span><span class="at">Consumption.Industrial.Natural Gas</span><span class="st">`</span> <span class="sc">+</span></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>                         <span class="st">`</span><span class="at">Consumption.Industrial.Other Petroleum Products</span><span class="st">`</span> <span class="sc">+</span></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>                         Consumption.Industrial.Solar <span class="sc">+</span></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>                         Consumption.Industrial.Wind <span class="sc">+</span></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>                         Consumption.Refinery.Coal <span class="sc">+</span></span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>                         Consumption.Refinery.Coal <span class="sc">+</span></span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>                         <span class="st">`</span><span class="at">Consumption.Residential.Distillate Fuel Oil</span><span class="st">`</span> <span class="sc">+</span></span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>                         Consumption.Residential.Geothermal <span class="sc">+</span></span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>                         Consumption.Residential.Kerosene <span class="sc">+</span></span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>                         Consumption.Residential.Petroleum <span class="sc">+</span></span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>                         <span class="st">`</span><span class="at">Consumption.Residential.Natural Gas</span><span class="st">`</span> <span class="sc">+</span></span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>                         Consumption.Transportation.Coal <span class="sc">+</span></span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>                         <span class="st">`</span><span class="at">Consumption.Transportation.Distillate Fuel Oil</span><span class="st">`</span> <span class="sc">+</span></span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>                         Consumption.Transportation.Petroleum <span class="sc">+</span></span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>                         <span class="st">`</span><span class="at">Consumption.Transportation.Natural Gas</span><span class="st">`</span>,</span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>         <span class="at">.after =</span> Year) <span class="sc">|&gt;</span></span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total_renewable =</span> Consumption.Commercial.Geothermal <span class="sc">+</span></span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>                           Consumption.Commercial.Hydropower <span class="sc">+</span></span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>                           Consumption.Commercial.Solar <span class="sc">+</span></span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>                           Consumption.Commercial.Wind <span class="sc">+</span></span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>                           Consumption.Industrial.Geothermal <span class="sc">+</span></span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>                           Consumption.Industrial.Hydropower <span class="sc">+</span></span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>                           Consumption.Industrial.Solar <span class="sc">+</span></span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>                           Consumption.Industrial.Wind <span class="sc">+</span></span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>                           Consumption.Residential.Geothermal,</span>
-<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>         <span class="at">.after =</span> total_energy) <span class="sc">|&gt;</span></span>
-<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop_renewable =</span> (total_renewable <span class="sc">/</span> total_energy),</span>
-<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>          <span class="at">.after =</span> total_renewable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
 <p>Calculate total proportions for all states per year:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>national_renewable_usage <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Year) <span class="sc">|&gt;</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total_energy_all_states =</span> <span class="fu">sum</span>(total_energy),</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">renewable_energy_all_states =</span> <span class="fu">sum</span>(total_renewable)) <span class="sc">|&gt;</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop_renewable_all_states =</span> (renewable_energy_all_states <span class="sc">/</span> </span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>                                          total_energy_all_states))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
 <p>Graph national usage of renewable energy:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>national_renewable_usage <span class="sc">|&gt;</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> prop_renewable_all_states)) <span class="sc">+</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"National Renewable Consumption over Time"</span>,</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Proportion of Renewable Energy Consumption"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using method = 'loess' and formula = 'y ~ x'</code></pre>
 </div>
@@ -325,11 +201,6 @@ dbl (83): Year, Production.Coal, Consumption.Commercial.Coal, Consumption.Co...
 </div>
 <p>Here, we use a dot plot to demonstrate the change over time of renewable consumption. Additionally, we added a line of best fit in order to best see how the consumption changed over time. This graph demonstrates that since 1960, there has been an overall increase in the proportion of renewable energy used from about 0.0008 to 0.0025. While this increase is good, the proportion of energy that is renewable is still remarkably low.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>model_national <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"lm"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(prop_renewable_all_states <span class="sc">~</span> Year, <span class="at">data =</span> national_renewable_usage)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(model_national)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 5
   term          estimate  std.error statistic       p.value
@@ -343,22 +214,18 @@ dbl (83): Year, Production.Coal, Consumption.Commercial.Coal, Consumption.Co...
 <p>We estimate the proportion of renewable energy the US uses to increase <span class="math inline">\(1.76e^{-05}\)</span> every year.</p>
 <p>Model fit:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(model_national)<span class="sc">$</span>r.squared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.4710977</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(model_national)<span class="sc">$</span>adj.r.squared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.4619787</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(model_national)<span class="sc">$</span>AIC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -788.182</code></pre>
 </div>
 </div>
 <p>Predicting renewable energy proportions in 2030:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model_national, <span class="fu">data.frame</span>(<span class="at">Year =</span> <span class="dv">2030</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
     .pred
@@ -369,80 +236,9 @@ dbl (83): Year, Production.Coal, Consumption.Commercial.Coal, Consumption.Co...
 <p>This model allows us to predict how the use of renewable energy will change in the upcoming years based on the current data. It also allows us to predict, based on this data, what our proportion of renewable energy usage will be in future years, such as 2030.</p>
 <p><strong>Regional comparison</strong>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>south <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(State <span class="sc">==</span> <span class="st">"Alabama"</span> <span class="sc">|</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Georgia"</span> <span class="sc">|</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Mississippi"</span> <span class="sc">|</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Texas"</span> <span class="sc">|</span></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Louisiana"</span> <span class="sc">|</span></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Oklahoma"</span> <span class="sc">|</span></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Arkansas"</span> <span class="sc">|</span></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"South Carolina"</span> <span class="sc">|</span></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Tennessee"</span> <span class="sc">|</span></span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Florida"</span> <span class="sc">|</span></span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"North Carolina"</span> <span class="sc">|</span></span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Virginia"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(State)</span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>northeast <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(State <span class="sc">==</span> <span class="st">"Maine"</span> <span class="sc">|</span></span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Massachusetts"</span> <span class="sc">|</span></span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Vermont"</span> <span class="sc">|</span></span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"New Hampshire"</span> <span class="sc">|</span></span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Connecticut"</span> <span class="sc">|</span></span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Pennsylvania"</span> <span class="sc">|</span></span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"New York"</span> <span class="sc">|</span></span>
-<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"New Jersey"</span> <span class="sc">|</span></span>
-<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Maryland"</span> <span class="sc">|</span> </span>
-<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"District of Columbia"</span> <span class="sc">|</span></span>
-<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Rhode Island"</span> <span class="sc">|</span></span>
-<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Delaware"</span>)<span class="sc">|&gt;</span></span>
-<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(State)</span>
-<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>west <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
-<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(State <span class="sc">==</span> <span class="st">"California"</span> <span class="sc">|</span></span>
-<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Washington"</span> <span class="sc">|</span></span>
-<span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Oregon"</span> <span class="sc">|</span></span>
-<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Colorado"</span> <span class="sc">|</span></span>
-<span id="cb21-36"><a href="#cb21-36" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Utah"</span> <span class="sc">|</span></span>
-<span id="cb21-37"><a href="#cb21-37" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Arizona"</span> <span class="sc">|</span></span>
-<span id="cb21-38"><a href="#cb21-38" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Idaho"</span> <span class="sc">|</span></span>
-<span id="cb21-39"><a href="#cb21-39" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Utah"</span> <span class="sc">|</span></span>
-<span id="cb21-40"><a href="#cb21-40" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"New Mexico"</span> <span class="sc">|</span></span>
-<span id="cb21-41"><a href="#cb21-41" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Alaska"</span> <span class="sc">|</span></span>
-<span id="cb21-42"><a href="#cb21-42" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Hawaii"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb21-43"><a href="#cb21-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(State)</span>
-<span id="cb21-44"><a href="#cb21-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-45"><a href="#cb21-45" aria-hidden="true" tabindex="-1"></a>midwest <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
-<span id="cb21-46"><a href="#cb21-46" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(State <span class="sc">==</span> <span class="st">"Montana"</span> <span class="sc">|</span></span>
-<span id="cb21-47"><a href="#cb21-47" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Minnesota"</span> <span class="sc">|</span></span>
-<span id="cb21-48"><a href="#cb21-48" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Nebraska"</span> <span class="sc">|</span></span>
-<span id="cb21-49"><a href="#cb21-49" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Kansas"</span> <span class="sc">|</span></span>
-<span id="cb21-50"><a href="#cb21-50" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Iowa"</span> <span class="sc">|</span></span>
-<span id="cb21-51"><a href="#cb21-51" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Missouri"</span> <span class="sc">|</span></span>
-<span id="cb21-52"><a href="#cb21-52" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Idaho"</span> <span class="sc">|</span></span>
-<span id="cb21-53"><a href="#cb21-53" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Illinois"</span> <span class="sc">|</span></span>
-<span id="cb21-54"><a href="#cb21-54" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Michigan"</span> <span class="sc">|</span></span>
-<span id="cb21-55"><a href="#cb21-55" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"North Dakota"</span> <span class="sc">|</span></span>
-<span id="cb21-56"><a href="#cb21-56" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"South Dakota"</span> <span class="sc">|</span></span>
-<span id="cb21-57"><a href="#cb21-57" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Wyoming"</span> <span class="sc">|</span></span>
-<span id="cb21-58"><a href="#cb21-58" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Wisconsin"</span> <span class="sc">|</span></span>
-<span id="cb21-59"><a href="#cb21-59" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Indiana"</span> <span class="sc">|</span></span>
-<span id="cb21-60"><a href="#cb21-60" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Ohio"</span> <span class="sc">|</span></span>
-<span id="cb21-61"><a href="#cb21-61" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Kentucky"</span> <span class="sc">|</span></span>
-<span id="cb21-62"><a href="#cb21-62" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"West Virginia"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb21-63"><a href="#cb21-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(State)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>south <span class="sc">|&gt;</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(State) <span class="sc">|&gt;</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> prop_renewable, <span class="at">color =</span> State)) <span class="sc">+</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Proportion of Energy from Renewable Sources"</span>, </span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">title =</span> <span class="st">"Energy in Southern States"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Scale for colour is already present.
 Adding another scale for colour, which will replace the existing scale.
@@ -453,15 +249,6 @@ Adding another scale for colour, which will replace the existing scale.
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>northeast <span class="sc">|&gt;</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(State) <span class="sc">|&gt;</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> prop_renewable, <span class="at">color =</span> State)) <span class="sc">+</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Proportion of Energy from Renewable Sources"</span>, </span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">title =</span> <span class="st">"Energy in NE States"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Scale for colour is already present.
 Adding another scale for colour, which will replace the existing scale.
@@ -472,15 +259,6 @@ Adding another scale for colour, which will replace the existing scale.
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>west <span class="sc">|&gt;</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(State) <span class="sc">|&gt;</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> prop_renewable, <span class="at">color =</span> State)) <span class="sc">+</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span></span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Proportion of Energy from Renewable Sources"</span>, </span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">title =</span> <span class="st">"Energy in Western States"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Scale for colour is already present.
 Adding another scale for colour, which will replace the existing scale.
@@ -491,15 +269,6 @@ Adding another scale for colour, which will replace the existing scale.
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>midwest <span class="sc">|&gt;</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(State) <span class="sc">|&gt;</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> prop_renewable, <span class="at">color =</span> State)) <span class="sc">+</span></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span></span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Proportion of Energy from Renewable Sources"</span>, </span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">title =</span> <span class="st">"Energy in Midwest States"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Scale for colour is already present.
 Adding another scale for colour, which will replace the existing scale.
@@ -513,39 +282,9 @@ Adding another scale for colour, which will replace the existing scale.
 <p>These graphs allow us to visualize and compare the states by region. The states were grouped into four regions, Northeast, West, Midwest, and South. Overall, these graphs show that the Northeast as a region has the highest proportion of renewable energy, followed by the West, the South, then the Midwest. There are a few notable outliers, especially Hawaii in the West, which has the highest renewable energy output of any state, and a spike in 2000 from North Carolina and Tennessee in the South.</p>
 <p>Regional model:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>south_state <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Alabama"</span>, <span class="st">"Georgia"</span>, <span class="st">"Mississippi"</span>, <span class="st">"Texas"</span>, <span class="st">"Louisiana"</span>,</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"Oklahoma"</span>, <span class="st">"Arkansas"</span>, <span class="st">"South Carolina"</span>)</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>northeast_state <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Maine"</span>, <span class="st">"Massachusetts"</span>, <span class="st">"Vermont"</span>, <span class="st">"New Hampshire"</span>, </span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"Connecticut"</span>, <span class="st">"Pennsylvania"</span>, <span class="st">"New York"</span>, <span class="st">"New Jersey"</span>,</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"Maryland"</span>, <span class="st">"District of Columbia"</span>, <span class="st">"Rhode Island"</span>, </span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"Delaware"</span>)</span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>west_state <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"California"</span>, <span class="st">"Washington"</span>, <span class="st">"Oregon"</span>, <span class="st">"Colorado"</span>, <span class="st">"Utah"</span>,</span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Arizona"</span>, <span class="st">""</span>, <span class="st">"Utah"</span>)</span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>midwest_state <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Montana"</span>, <span class="st">"Minnesota"</span>, <span class="st">"Nebraska"</span>, <span class="st">"Kansas"</span>, <span class="st">"Iowa"</span>, </span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"Missouri"</span>, <span class="st">"Idaho"</span>, <span class="st">"Illinois"</span>, <span class="st">"Michigan"</span>)</span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
-<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">region =</span> <span class="fu">if_else</span>(State <span class="sc">%in%</span> south_state,</span>
-<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>                          <span class="st">"south"</span>, <span class="fu">if_else</span>(State <span class="sc">%in%</span> northeast_state, </span>
-<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>                                           <span class="st">"northeast"</span>, <span class="fu">if_else</span>(State <span class="sc">%in%</span></span>
-<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>                                                                  west_state,</span>
-<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>                                                                <span class="st">"west"</span>,</span>
-<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>                                                                <span class="fu">if_else</span>(</span>
-<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>                                                                  State <span class="sc">%in%</span></span>
-<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>                                                                    midwest_state,</span>
-<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>                                                                  <span class="st">"midwest"</span>,</span>
-<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>                                                                  <span class="st">"none"</span></span>
-<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>                                                                ))))) <span class="sc">|&gt;</span></span>
-<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(region <span class="sc">!=</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>model_region <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"lm"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(prop_renewable <span class="sc">~</span> Year <span class="sc">*</span> region, <span class="at">data =</span> data)</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(model_region)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8 × 5
   term                     estimate std.error statistic  p.value
@@ -573,43 +312,36 @@ Adding another scale for colour, which will replace the existing scale.
 <p>We estimate the proportion of renewable energy a state in the <strong>West</strong> uses to decrease <span class="math inline">\(0.003\)</span> each year.</p>
 <p>Model fit:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(model_region)<span class="sc">$</span>r.squared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.09329481</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(model_region)<span class="sc">$</span>adj.r.squared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.09026091</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(model_region)<span class="sc">$</span>AIC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -16233.92</code></pre>
 </div>
 </div>
 <p>Predicting renewable energy proportions in 2030:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model_region, <span class="fu">data.frame</span>(<span class="at">Year =</span> <span class="dv">2030</span>, <span class="at">region =</span> <span class="st">"west"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
     .pred
     &lt;dbl&gt;
 1 0.00195</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model_region, <span class="fu">data.frame</span>(<span class="at">Year =</span> <span class="dv">2030</span>, <span class="at">region =</span> <span class="st">"south"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
      .pred
      &lt;dbl&gt;
 1 0.000329</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model_region, <span class="fu">data.frame</span>(<span class="at">Year =</span> <span class="dv">2030</span>, <span class="at">region =</span> <span class="st">"northeast"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
     .pred
     &lt;dbl&gt;
 1 0.00229</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model_region, <span class="fu">data.frame</span>(<span class="at">Year =</span> <span class="dv">2030</span>, <span class="at">region =</span> <span class="st">"midwest"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
     .pred
@@ -618,7 +350,6 @@ Adding another scale for colour, which will replace the existing scale.
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model_region, <span class="fu">data.frame</span>(<span class="at">Year =</span> <span class="dv">2030</span>, <span class="at">region =</span> <span class="st">"south"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
      .pred
@@ -627,7 +358,6 @@ Adding another scale for colour, which will replace the existing scale.
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model_region, <span class="fu">data.frame</span>(<span class="at">Year =</span> <span class="dv">2030</span>, <span class="at">region =</span> <span class="st">"northeast"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
     .pred
@@ -636,7 +366,6 @@ Adding another scale for colour, which will replace the existing scale.
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model_region, <span class="fu">data.frame</span>(<span class="at">Year =</span> <span class="dv">2030</span>, <span class="at">region =</span> <span class="st">"midwest"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
     .pred
@@ -647,70 +376,10 @@ Adding another scale for colour, which will replace the existing scale.
 <p>Similar to the national model, this model allows us to predict how the use of renewable energy will change in the upcoming years based on the current data for each region. It also allows us to predict, based on this data, what our proportion of renewable energy usage will be in future years for these regions, such as in 2030.</p>
 <p><strong>Political Affiliations:</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>democrat <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(State <span class="sc">==</span> <span class="st">"California"</span> <span class="sc">|</span></span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Oregon"</span> <span class="sc">|</span></span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Washington"</span> <span class="sc">|</span></span>
-<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Nevada"</span> <span class="sc">|</span></span>
-<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Colorado"</span> <span class="sc">|</span></span>
-<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"New Mexico"</span> <span class="sc">|</span></span>
-<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Minnesota"</span> <span class="sc">|</span></span>
-<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Iowa"</span> <span class="sc">|</span></span>
-<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Hawaii"</span> <span class="sc">|</span></span>
-<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Wisconsin"</span> <span class="sc">|</span></span>
-<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Illonois"</span> <span class="sc">|</span></span>
-<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Michigan"</span> <span class="sc">|</span></span>
-<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Florida"</span> <span class="sc">|</span></span>
-<span id="cb53-15"><a href="#cb53-15" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Virginia"</span> <span class="sc">|</span></span>
-<span id="cb53-16"><a href="#cb53-16" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Maryland"</span> <span class="sc">|</span></span>
-<span id="cb53-17"><a href="#cb53-17" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Delaware"</span> <span class="sc">|</span></span>
-<span id="cb53-18"><a href="#cb53-18" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Pennsylvania"</span> <span class="sc">|</span></span>
-<span id="cb53-19"><a href="#cb53-19" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"New Jersey"</span> <span class="sc">|</span></span>
-<span id="cb53-20"><a href="#cb53-20" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"New York"</span> <span class="sc">|</span></span>
-<span id="cb53-21"><a href="#cb53-21" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Massachussetts"</span> <span class="sc">|</span></span>
-<span id="cb53-22"><a href="#cb53-22" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Rhode Island"</span> <span class="sc">|</span></span>
-<span id="cb53-23"><a href="#cb53-23" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Connecticut"</span> <span class="sc">|</span></span>
-<span id="cb53-24"><a href="#cb53-24" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Vermont"</span> <span class="sc">|</span></span>
-<span id="cb53-25"><a href="#cb53-25" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"New Hampshire"</span> <span class="sc">|</span></span>
-<span id="cb53-26"><a href="#cb53-26" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Maine"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb53-27"><a href="#cb53-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(State)</span>
-<span id="cb53-28"><a href="#cb53-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-29"><a href="#cb53-29" aria-hidden="true" tabindex="-1"></a>republican <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
-<span id="cb53-30"><a href="#cb53-30" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(State <span class="sc">==</span> <span class="st">"Alaska"</span> <span class="sc">|</span></span>
-<span id="cb53-31"><a href="#cb53-31" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Idaho"</span> <span class="sc">|</span></span>
-<span id="cb53-32"><a href="#cb53-32" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Montana"</span> <span class="sc">|</span></span>
-<span id="cb53-33"><a href="#cb53-33" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Wyoming"</span> <span class="sc">|</span></span>
-<span id="cb53-34"><a href="#cb53-34" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"North Dakota"</span> <span class="sc">|</span> </span>
-<span id="cb53-35"><a href="#cb53-35" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"South Dakota"</span> <span class="sc">|</span></span>
-<span id="cb53-36"><a href="#cb53-36" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Nebraska"</span> <span class="sc">|</span></span>
-<span id="cb53-37"><a href="#cb53-37" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Kansas"</span> <span class="sc">|</span></span>
-<span id="cb53-38"><a href="#cb53-38" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Oklahoma"</span> <span class="sc">|</span></span>
-<span id="cb53-39"><a href="#cb53-39" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Texas"</span> <span class="sc">|</span></span>
-<span id="cb53-40"><a href="#cb53-40" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Missouri"</span> <span class="sc">|</span></span>
-<span id="cb53-41"><a href="#cb53-41" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Arkansas"</span> <span class="sc">|</span></span>
-<span id="cb53-42"><a href="#cb53-42" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Louisiana"</span> <span class="sc">|</span></span>
-<span id="cb53-43"><a href="#cb53-43" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Mississippi"</span> <span class="sc">|</span></span>
-<span id="cb53-44"><a href="#cb53-44" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Alabama"</span> <span class="sc">|</span></span>
-<span id="cb53-45"><a href="#cb53-45" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Tennessee"</span> <span class="sc">|</span></span>
-<span id="cb53-46"><a href="#cb53-46" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Kentucky"</span> <span class="sc">|</span></span>
-<span id="cb53-47"><a href="#cb53-47" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Indiana"</span> <span class="sc">|</span></span>
-<span id="cb53-48"><a href="#cb53-48" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Ohio"</span> <span class="sc">|</span></span>
-<span id="cb53-49"><a href="#cb53-49" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"West Virginia"</span> <span class="sc">|</span></span>
-<span id="cb53-50"><a href="#cb53-50" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"Georgia"</span> <span class="sc">|</span></span>
-<span id="cb53-51"><a href="#cb53-51" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"South Carolina"</span> <span class="sc">|</span></span>
-<span id="cb53-52"><a href="#cb53-52" aria-hidden="true" tabindex="-1"></a>         State <span class="sc">==</span> <span class="st">"North Carolina"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb53-53"><a href="#cb53-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(State)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
 <p>These states were grouped by democratic and republic based on how they voted in 2018 because this dataset ended in 2019, and 2018 was the most recent nationwide voting before that.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>democrat <span class="sc">|&gt;</span></span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> prop_renewable, <span class="at">color =</span> State)) <span class="sc">+</span></span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span></span>
-<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span></span>
-<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Proportion of Energy from Renewable Sources"</span>, </span>
-<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">title =</span> <span class="st">"Energy in Democratic States"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Scale for colour is already present.
 Adding another scale for colour, which will replace the existing scale.
@@ -721,14 +390,6 @@ Adding another scale for colour, which will replace the existing scale.
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>republican <span class="sc">|&gt;</span></span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> prop_renewable, <span class="at">color =</span> State)) <span class="sc">+</span></span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span></span>
-<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_d</span>() <span class="sc">+</span></span>
-<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Proportion of Energy from Renewable Sources"</span>, </span>
-<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">title =</span> <span class="st">"Energy in Republican States"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Scale for colour is already present.
 Adding another scale for colour, which will replace the existing scale.
@@ -741,34 +402,12 @@ Adding another scale for colour, which will replace the existing scale.
 <p>*The scales on the y axis of the democratic graph is approximately 10 times greater than that of the republican graph, so when comparing take this into consideration as the data in the democratic graph represents more change than the republican graph.</p>
 <p>These graphs allow us to visualize and compare the proportion of renewable energy used by republican and democratic states. These graphs demonstrate that overall the democratic states use more renewable energy than republican states. There are a few notable outliers, specifically Maine in the democratic states and Idaho in the republican states.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>democrat_state <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"California"</span>, <span class="st">"Oregon"</span>, <span class="st">"Washington"</span>, <span class="st">"Nevada"</span>, </span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Colorado"</span>, <span class="st">"New Mexico"</span>, <span class="st">"Minnesota"</span>, <span class="st">"Iowa"</span>, </span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Hawaii"</span>, <span class="st">"Wisconsin"</span>, <span class="st">"Illonois"</span>, <span class="st">"Michigan"</span>, </span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Florida"</span>, <span class="st">"Virginia"</span>, <span class="st">"Maryland"</span>, <span class="st">"Delaware"</span>, </span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Pennsylvania"</span>, <span class="st">"New Jersey"</span>, <span class="st">"New York"</span>, </span>
-<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Massachussetts"</span>, <span class="st">"Rhode Island"</span>, <span class="st">"Connecticut"</span>, </span>
-<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Vermont"</span>, <span class="st">"New Hampshire"</span>, <span class="st">"Maine"</span>)</span>
-<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a>republican_state <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Alaska"</span>, <span class="st">"Idaho"</span>, <span class="st">"Montana"</span>, <span class="st">"Wyoming"</span>, <span class="st">"North Dakota"</span>,</span>
-<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"South Dakota"</span>, <span class="st">"Nebraska"</span>, <span class="st">"Kansas"</span>, <span class="st">"Oklahoma"</span>,</span>
-<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Texas"</span>, <span class="st">"Missouri"</span>, <span class="st">"Arkansas"</span>, <span class="st">"Louisiana"</span>,</span>
-<span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Mississippi"</span>, <span class="st">"Alabama"</span>, <span class="st">"Tennessee"</span>, <span class="st">"Kentucky"</span>,</span>
-<span id="cb58-14"><a href="#cb58-14" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Indiana"</span>, <span class="st">"Ohio"</span>, <span class="st">"West Virginia"</span>, <span class="st">"Georgia"</span>,</span>
-<span id="cb58-15"><a href="#cb58-15" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"South Carolina"</span>, <span class="st">"North Carolina"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>data_political <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
-<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">party =</span> <span class="fu">if_else</span>(State <span class="sc">==</span> democrat_state, </span>
-<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"Democratic State"</span>, </span>
-<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>                           <span class="st">"Republican State"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>model_political <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"lm"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(prop_renewable <span class="sc">~</span> Year <span class="sc">*</span> party, <span class="at">data =</span> data_political)</span>
-<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(model_political)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 5
   term                          estimate std.error statistic p.value
@@ -785,21 +424,17 @@ Adding another scale for colour, which will replace the existing scale.
 <p>Holding year constant, we estimate the proportion of renewable energy a state uses to increase <span class="math inline">\(0.250\)</span> for the Democratic states.</p>
 <p>we estimate the proportion of renewable energy a state uses to decrease <span class="math inline">\(0.025\)</span> for the Republican states each year.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(model_political)<span class="sc">$</span>r.squared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.001031103</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(model_political)<span class="sc">$</span>adj.r.squared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -0.0003987193</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glance</span>(model_political)<span class="sc">$</span>AIC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -16038.41</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model_political, <span class="fu">data.frame</span>(<span class="at">Year =</span> <span class="dv">2030</span>, <span class="at">party =</span> <span class="st">"Democratic State"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
     .pred
@@ -808,7 +443,6 @@ Adding another scale for colour, which will replace the existing scale.
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model_political, <span class="fu">data.frame</span>(<span class="at">Year =</span> <span class="dv">2030</span>, <span class="at">party =</span> <span class="st">"Republican State"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
     .pred
