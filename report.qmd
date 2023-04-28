@@ -132,7 +132,7 @@ $\widehat{prop\_renewable\_national} = -3.43e^{-2}+1.76e^{-5} * Year$
 
 Interpret our model:
 
-We estimate the proportion of renewable energy a state uses to increase $1.67e^{-05}$ every year.
+We estimate the proportion of renewable energy the US uses to increase $1.76e^{-05}$ every year.
 
 Model fit:
 
@@ -331,7 +331,7 @@ model_region <- linear_reg() |>
 tidy(model_region)
 ```
 
-$\widehat{prop\_renewable} = -5.05e^{-2}+2.57e^{-5} * Year + 1.34e^{-1}*northeast + 5.18e^{-2} * south + 6.55e^{-3} * west + 6.6e^{-5}*Year*northeast -2.65e^{-5}*Year*south -3.4e^{-6}*Year*west$
+$\widehat{prop\_renewable} = -5.05e^{-2}+2.57e^{-5} * Year + 1.29e^{-1}*northeast + 4.61e^{-2} * south + 8.50e^{-4} * west - 6.31e^{-5}*Year*northeast -2.34e^{-5}*Year*south -2.96e^{-7}*Year*west$
 
 {1 if south; 0 if not} {1 if northeast; 0 if not} {1 if west; 0 if not}
 
@@ -339,13 +339,19 @@ Interpreting our model:
 
 Holding region constant, we estimate the proportion of renewable energy a state uses to increase $2.57e^{-05}$ every year.
 
-Holding year constant, we estimate the proportion of renewable energy a state uses to increase $0.07808661$ for the **Northeast** region
+Holding year constant, we estimate the proportion of renewable energy a state uses to increase $0.475$ for the **Northeast** region
 
-Holding year constant, we estimate the proportion of renewable energy a state uses to increase $-0.00450742$ for the **South** region.
+Holding year constant, we estimate the proportion of renewable energy a state uses to increase $0.624$ for the **South** region.
 
-Holding year constant, we estimate the proportion of renewable energy a state uses to increase $-0.04969127$ for the **West** region.
+Holding year constant, we estimate the proportion of renewable energy a state uses to increase $0.156$ for the **West** region.
 
-Holding year constant, we estimate the proportion of renewable energy a state uses to decrease $-0.05054079$ for the **Midwest** region.
+Holding year constant, we estimate the proportion of renewable energy a state uses to decrease $0.683$ for the **Midwest** region.
+
+We estimate the proportion of renewable energy a state in the **Northeast** uses to decrease $0.043$ each year.
+
+We estimate the proportion of renewable energy a state in the **South** uses to decrease $0.016$ each year.
+
+We estimate the proportion of renewable energy a state in the **West** uses to decrease $0.003$ each year.
 
 Model fit:
 
@@ -518,15 +524,15 @@ model_political <- linear_reg() |>
 tidy(model_political)
 ```
 
-$\widehat{prop\_renewable}=-1.41e^{-2}+8.54e^{-6}+1.85e^{-2}*Republican State - 9.92e^{-6}*Year*Republican State$
+$\widehat{prop\_renewable}=-1.41e^{-2}+8.54e^{-6}*Year+1.85e^{-2}*Republican State - 9.92e^{-6}*Year*Republican State$
 
 {1 if Republican state; 0 if Democratic state}
 
 Holding party constant, we estimate the proportion of renewable energy a state uses to increase $8.54e^{-06}$ every year.
 
-Holding year constant, we estimate the proportion of renewable energy a state uses to increase $0.01847306$ for the Democratic states.
+Holding year constant, we estimate the proportion of renewable energy a state uses to increase $0.250$ for the Democratic states.
 
-Holding year constant, we estimate the proportion of renewable energy a state uses to increase $-0.014067232$ for the Republican states.
+we estimate the proportion of renewable energy a state uses to decrease $0.025$ for the Republican states each year.
 
 ```{r}
 #| label: political-r-squared
