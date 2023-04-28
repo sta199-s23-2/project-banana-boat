@@ -15,11 +15,9 @@ The observations are of different states in different years and have variables f
 
 There should be no ethical concerns about the data since the data is not specific to individuals and reports many types of used energy in the US.
 
-*Research question: On both a state and national level, how has the proportion of renewable energy usage/production relative to overall energy usage/production changed over time, and has there been a shift in which states are the most renewable energy heavy?*
+*Research question: On both a regional and national level, how has the proportion of renewable energy consumption relative to overall energy consumption changed over time, and has this shift been because of geographic, political, or other external factors?*
 
 As climate change continues to progress rapidly, it is important to move towards clean technology and renewable energy sources in order to save our earth while ensuring innovation. The United States of America has emerged as a leading renewable energy innovator in the world, which is a perfect study target for researchers who are interested in the implementation of renewable energy. Our team thinks that analyzing the energy usage of different states is a good way to see how our country is progressing toward the goal of slowing global warming on a local level. This research method will help policymakers and environmental engineers pinpoint the specific problems regarding renewable energy in our country and help us move towards a clean future of collaboration of all states.
-
-States that have higher emphasis on technological advancement such as California and North Carolina will see a significant increase in renewable energy production and consumption.
 
 Important definitions: The data set contains both categorical and quantitative variables. The categorical variables include "State". The remaining columns, focusing on relevant facts regarding different uses of energy, are all quantitative.
 
@@ -27,7 +25,7 @@ Renewable energy: For our project, energy is considered renewable if it meets tw
 
 Other energy sources: natural gas, coal, as well as any other sources of energy.
 
-Groups of interest: states, expenditures and consumption of renewable energy and other energy sources, etc. Our goal is to study the effects of these aforementioned variables to learn about consumption habits and technological specialization of different states.
+Groups of interest: states, regions, political parties, expenditures and consumption of renewable energy and other energy sources, etc. Our goal is to study the effects of these aforementioned variables to learn about consumption habits and technological specialization of different states.
 
 ## **Methodology**
 
@@ -118,100 +116,45 @@ national_renewable_usage |>
        y = "Proportion of Renewable Energy Consumption")
 ```
 
-Here, we use a dot plot to demonstrate the change over time of renewable consumption. Additionally, we added a line of best fit in order to best see how the consumption changed over time.
-
-Energy proportion for top 5 states in 2019:
+Here, we use a dot plot to demonstrate the change over time of renewable consumption. Additionally, we added a line of best fit in order to best see how the consumption changed over time. This graph demonstrates that since 1960, there has been an overall increase in the proportion of renewable energy used from about 0.0008 to 0.0025. While this increase is good, the proportion of energy that is renewable is still remarkably low.
 
 ```{r}
-#| label: top5-energy
+#| label: create-national-model
 
-data |>
-  filter(Year == 2019) |>
-  arrange(desc(prop_renewable)) |>
-  slice(1:5) |>
-  ggplot(aes(x = State, y = prop_renewable)) +
-  geom_col(color = "black", fill = "lightblue") +
-  labs(title = "Top Five States for Renewable Energy consumption in 2019",
-       y = "Renewable Energy Consumption in 2019 (Proportion)")
+model_national <- linear_reg() |>
+  set_engine("lm") |>
+  fit(prop_renewable_all_states ~ Year, data = national_renewable_usage)
+
+tidy(model_national)
 ```
 
-Here, we use a bar graph in order to compare each states renewable energy consumption in 2019.
+$\widehat{prop\_renewable\_national} = -3.43e^{-2}+1.76e^{-5} * Year$
 
-Track these states over time:
+Interpret our model:
+
+We estimate the proportion of renewable energy a state uses to increase $1.67e^{-05}$ every year.
+
+Model fit:
 
 ```{r}
-#| label: tracker
+#| label: national-model-performance
 
-data |>
-  filter(State == "California" |
-         State == "District of Columbia" |
-         State == "Hawaii" |
-         State == "Massachusetts" |
-         State == "Nevada") |>
-  group_by(State) |>
-  ggplot(aes(x = Year, y = prop_renewable, color = State)) +
-  geom_point(alpha = 0.5) +
-  scale_color_viridis_d() +
-  geom_smooth(se = FALSE) +
-  scale_color_viridis_d() +
-    labs(y = "Proportion of Energy from Renewable Sources", 
-       x = "Year", title = "Energy in Most Metropolitan States")
+glance(model_national)$r.squared
+glance(model_national)$adj.r.squared
+glance(model_national)$AIC
 ```
 
-This dot plot with lines of best fit allows us to better visualize how these states consumption of renewable energy has increased over time.
-
-Metropolitan vs rural:
+Predicting renewable energy proportions in 2030:
 
 ```{r}
-#| label: comparison
+#| label: prediction-national
 
-metropolitan <- data |>
-  filter(State == "California" |
-         State == "District of Columbia" |
-         State == "New York" |
-         State == "Massachusetts" |
-         State == "Texas") |>
-  group_by(State)
-
-rural <- data |>
-filter(State == "Maine" |
-         State == "Vermont" |
-         State == "Mississippi" |
-         State == "Montana" |
-         State == "West Virginia") |>
-  group_by(State)
+predict(model_national, data.frame(Year = 2030))
 ```
 
-```{r}
-#| label: comp2
+This model allows us to predict how the use of renewable energy will change in the upcoming years based on the current data. It also allows us to predict, based on this data, what our proportion of renewable energy usage will be in future years, such as 2030.
 
-metropolitan |>
-  ggplot(aes(x = Year, y = prop_renewable, color = State)) +
-  geom_point(alpha = 0.5) +
-  scale_color_viridis_d() +
-  geom_smooth(se = FALSE) +
-  scale_color_viridis_d() +
-  labs(y = "Proportion of Energy from Renewable Sources", 
-       x = "Year", title = "Energy in Most Metropolitan States")
-```
-
-```{r}
-#| label: comp3
-
-rural |>
-  group_by(State) |>
-  ggplot(aes(x = Year, y = prop_renewable, color = State)) +
-  geom_point(alpha = 0.5) +
-  scale_color_viridis_d() +
-  geom_smooth(se = FALSE) +
-  scale_color_viridis_d() +
-  labs(y = "Proportion of Energy from Renewable Sources", 
-       x = "Year", title = "Energy in Most Rural States")
-```
-
-This dot plot with lines of best fit shows the 5 states with the lowest renewable energy consumption, and allows us to see how their consumption of renewable energy has changed over time.
-
-Geographical location:
+**Regional comparison**:
 
 ```{r}
 #| label: geo-location
@@ -224,7 +167,11 @@ filter(State == "Alabama" |
          State == "Louisiana" |
          State == "Oklahoma" |
          State == "Arkansas" |
-         State == "South Carolina") |>
+         State == "South Carolina" |
+         State == "Tennessee" |
+         State == "Florida" |
+         State == "North Carolina" |
+         State == "Virginia") |>
   group_by(State)
 
 northeast <- data |>
@@ -249,8 +196,11 @@ filter(State == "California" |
          State == "Colorado" |
          State == "Utah" |
          State == "Arizona" |
-         State == "" |
-         State == "Utah" )|>
+         State == "Idaho" |
+         State == "Utah" |
+         State == "New Mexico" |
+         State == "Alaska" |
+         State == "Hawaii") |>
   group_by(State)
 
 midwest <- data |>
@@ -262,8 +212,21 @@ filter(State == "Montana" |
          State == "Missouri" |
          State == "Idaho" |
          State == "Illinois" |
-         State == "Michigan")|>
+         State == "Michigan" |
+         State == "North Dakota" |
+         State == "South Dakota" |
+         State == "Wyoming" |
+         State == "Wisconsin" |
+         State == "Indiana" |
+         State == "Ohio" |
+         State == "Kentucky" |
+         State == "West Virginia") |>
   group_by(State)
+
+```
+
+```{r}
+#| label: south-plot
 
 south |>
   group_by(State) |>
@@ -275,6 +238,12 @@ south |>
   labs(y = "Proportion of Energy from Renewable Sources", 
        x = "Year", title = "Energy in Southern States")
 
+```
+
+```{r}
+#| label: northeast-plot
+
+
 northeast |>
   group_by(State) |>
   ggplot(aes(x = Year, y = prop_renewable, color = State)) +
@@ -285,6 +254,11 @@ northeast |>
   labs(y = "Proportion of Energy from Renewable Sources", 
        x = "Year", title = "Energy in NE States")
 
+```
+
+```{r}
+#| label: west-plot
+
 west |>
   group_by(State) |>
   ggplot(aes(x = Year, y = prop_renewable, color = State)) +
@@ -294,6 +268,11 @@ west |>
   scale_color_viridis_d() +
   labs(y = "Proportion of Energy from Renewable Sources", 
        x = "Year", title = "Energy in Western States")
+
+```
+
+```{r}
+#| label: midwest-plot
 
 midwest |>
   group_by(State) |>
@@ -306,43 +285,9 @@ midwest |>
        x = "Year", title = "Energy in Midwest States")
 ```
 
-These graphs allow us to both compare the different regions in the US, and within each region see how the consumption of renewable energy by state has changed over time. With this, we can analyze trends and patterns by region.
+These graphs allow us to visualize and compare the states by region. The states were grouped into four regions, Northeast, West, Midwest, and South. Overall, these graphs show that the Northeast as a region has the highest proportion of renewable energy, followed by the West, the South, then the Midwest. There are a few notable outliers, especially Hawaii in the West, which has the highest renewable energy output of any state, and a spike in 2000 from North Carolina and Tennessee in the South.
 
-## **Results**
-
-```{r}
-#| label: create-national-model
-model_national <- linear_reg() |>
-  set_engine("lm") |>
-  fit(prop_renewable_all_states ~ Year, data = national_renewable_usage)
-
-tidy(model_national)
-```
-
-$\widehat{prop\_renewable\_national} = -3.43e^{-2}+1.76e^{-5} * Year$
-
-Interpret our model:
-
-We estimate the proportion of renewable energy a state uses to increase $1.67e^{-05}$ every year.
-
-Model fit:
-
-```{r}
-#| label: national-model-performance
-glance(model_national)$r.squared
-glance(model_national)$adj.r.squared
-glance(model_national)$AIC
-```
-
-Predicting renewable energy proportions in 2030:
-
-```{r}
-#| label: prediction-national
-predict(model_national, data.frame(Year = 2030))
-
-```
-
-Model proportion of renewable energy vs region and time to predict proportion of renewable energy in the future.
+Regional model:
 
 ```{r}
 #| label: create-region-variable
@@ -377,11 +322,11 @@ data <- data |>
 #| label: create-model
 library(tidymodels)
 
-model <- linear_reg() |>
+model_region <- linear_reg() |>
   set_engine("lm") |>
   fit(prop_renewable ~ Year * region, data = data)
 
-tidy(model)
+tidy(model_region)
 ```
 
 $\widehat{prop\_renewable} = -5.05e^{-2}+2.57e^{-5} * Year + 1.34e^{-1}*northeast + 5.18e^{-2} * south + 6.55e^{-3} * west + 6.6e^{-5}*Year*northeast -2.65e^{-5}*Year*south -3.4e^{-6}*Year*west$
@@ -404,21 +349,41 @@ Model fit:
 
 ```{r}
 #| label: model-performance
-glance(model)$r.squared
-glance(model)$adj.r.squared
-glance(model)$AIC
+glance(model_region)$r.squared
+glance(model_region)$adj.r.squared
+glance(model_region)$AIC
 ```
 
 Predicting renewable energy proportions in 2030:
 
 ```{r}
-#| label: prediction-regional
+#| label: prediction-regional-west
 
-predict(model, data.frame(Year = 2030, region = "west"))
-predict(model, data.frame(Year = 2030, region = "south"))
-predict(model, data.frame(Year = 2030, region = "northeast"))
-predict(model, data.frame(Year = 2030, region = "midwest"))
+predict(model_region, data.frame(Year = 2030, region = "west"))
+predict(model_region, data.frame(Year = 2030, region = "south"))
+predict(model_region, data.frame(Year = 2030, region = "northeast"))
+predict(model_region, data.frame(Year = 2030, region = "midwest"))
 ```
+
+```{r}
+#| label: prediction-regional-south
+
+predict(model_region, data.frame(Year = 2030, region = "south"))
+```
+
+```{r}
+#| label: prediction-regional-northeast
+
+predict(model_region, data.frame(Year = 2030, region = "northeast"))
+```
+
+```{r}
+#| label: prediction-regional-midwest
+
+predict(model_region, data.frame(Year = 2030, region = "midwest"))
+```
+
+Similar to the national model, this model allows us to predict how the use of renewable energy will change in the upcoming years based on the current data for each region. It also allows us to predict, based on this data, what our proportion of renewable energy usage will be in future years for these regions, such as in 2030.
 
 **Political Affiliations:**
 
@@ -508,7 +473,7 @@ republican |>
        x = "Year", title = "Energy in Republican States")
 ```
 
-By comparing these two graphs, we can see that the democratic states overall use a higher proportion of renewable energy than the republican states. Most of the republican states have been slightly increasing since 2000, but have still most of them in 2019 ranged from a proportion of 0.000 to 0.002, with most states being around 0.001 and Idaho being an outlier at a proportion of 0.004. The democratic states, on the other hand, range from 0.00 to 0.008, with most states being around 0.003. While these both have very lower porportions of renewable energy, the democratic states on average have a higher proportional of renewable energy than the republican states.
+These graphs allow us to visualize and compare the proportion of renewable energy used by republican and democratic states. These graphs demonstrate that overall the democratic states use more renewable energy than republican states. There are a few notable outliers, specifically Maine in the democratic states and Idaho in the republican states.
 
 ```{r}
 #| label: political-variables
@@ -549,15 +514,15 @@ model_political <- linear_reg() |>
 tidy(model_political)
 ```
 
-\$\\widehat{prop\\\_renewable}=-1.41e\^{-2}+8.54e\^{-6}+1.85e\^{-2}\*Republican State - -9.92e\^{-6}\*Year\*Republican State\$
+$\widehat{prop\_renewable}=-1.41e^{-2}+8.54e^{-6}+1.85e^{-2}*Republican State - 9.92e^{-6}*Year*Republican State$
 
 {1 if Republican state; 0 if Democratic state}
 
-Holding party constant, we estimate the proportion of renewable energy a state uses to increase \$8.54e\^{-05}\$ every year.
+Holding party constant, we estimate the proportion of renewable energy a state uses to increase $8.54e^{-06}$ every year.
 
-Holding year constant, we estimate the proportion of renewable energy a state uses to increase \$0.01847306\$ for the Democratic states.
+Holding year constant, we estimate the proportion of renewable energy a state uses to increase $0.01847306$ for the Democratic states.
 
-Holding year constant, we estimate the proportion of renewable energy a state uses to increase \$-0.014067232\$ for the Republican states.
+Holding year constant, we estimate the proportion of renewable energy a state uses to increase $-0.014067232$ for the Republican states.
 
 ```{r}
 #| label: political-r-squared
@@ -567,13 +532,20 @@ glance(model_political)$adj.r.squared
 glance(model_political)$AIC
 ```
 
-The R squared and adjusted R squared for this model is very low, meaning that it is not a very good model for determining use of renewable energy. The AIC further confirms it by showing that there are many other explanatory variables. Therefore, although it is likely that political party plays a part in the use of renewable energy, there are many other factors that play an important part.
-
 ```{r}
-#| label: political-predict
+#| label: political-predict-dem
 
 predict(model_political, data.frame(Year = 2030, party = "Democratic State"))
+```
+
+```{r}
+#| label: political-predict-rep
+
 predict(model_political, data.frame(Year = 2030, party = "Republican State"))
 ```
 
-**Results** Our data confirms several important pieces of information. Primarily, renewable energy consumption since 1960 has overall increased significantly. Similarly, California, Washington D.C., Hawaii, Massachusetts, and Nevada use the highest proportion of renewable energy, with Hawaii having the highest proportion of the 5. Just like the nation as a whole, these states have seen a significant increase in renewable energy usage, sharply increasing in the early 2000s. When comparing metropolitan to rural areas, overall metropolitan areas have a much higher proportion of renewable energies compared to rural areas. Furthermore, metropolitan areas over the last years have increased their proportion of renewable energies, while rural areas have stayed stagnant or decreased. In terms of geographical location, the northeastern states by far have the highest proportion of renewable energy. The southern states, on the other hand, have the worst proportion of renewable energy.
+Similar to the previous models, this model allows us to predict how the use of renewable energy will change in the upcoming years based on the current data for the states affiliated with each political party. It also allows us to predict, based on this data, what our proportion of renewable energy usage will be in future years for these parties, such as in 2030.
+
+## **Results**
+
+Our data confirms several important pieces of information. Primarily, renewable energy consumption since 1960 has overall increased significantly. Similarly, California, Washington D.C., Hawaii, Massachusetts, and Nevada use the highest proportion of renewable energy, with Hawaii having the highest proportion of the 5. Just like the nation as a whole, these states have seen a significant increase in renewable energy usage, sharply increasing in the early 2000s. When comparing metropolitan to rural areas, overall metropolitan areas have a much higher proportion of renewable energies compared to rural areas. Furthermore, metropolitan areas over the last years have increased their proportion of renewable energies, while rural areas have stayed stagnant or decreased. In terms of geographical location, the northeastern states by far have the highest proportion of renewable energy. The southern states, on the other hand, have the worst proportion of renewable energy.
