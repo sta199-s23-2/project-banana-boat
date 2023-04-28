@@ -132,7 +132,7 @@ $\widehat{prop\_renewable\_national} = -3.43e^{-2}+1.76e^{-5} * Year$
 
 Interpret our model:
 
-We estimate the proportion of renewable energy a state uses to increase $1.67e^{-05}$ every year.
+We estimate the proportion of renewable energy the US uses to increase $1.76e^{-05}$ every year.
 
 Model fit:
 
