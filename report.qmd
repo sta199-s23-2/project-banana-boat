@@ -33,7 +33,7 @@ Groups of interest: states, regions, political parties, expenditures and consump
 #| label: data-loading
 
 library(tidyverse)
-data <- read_csv("~/Final Project/data/energy.csv")
+data <- read_csv("~/project-banana-boat/data/energy.csv")
 ```
 
 Creating variables total energy, total renewable energy, and proportion of renewable energy consumption:
