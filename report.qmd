@@ -9,7 +9,7 @@ execute:
 
 ## **Introduction & Data**
 
-This data set comes from the CORGIS Dataset Project, who got this data from the US Energy Information Administration, a part of the US Government. This data has been collected by the US Energy Information Administration from 1960 to 2019 based on the consumption, production, expenditures, and price of different sources of energy by state.
+This data set comes from the CORGIS Dataset Project, which got this data from the US Energy Information Administration, a part of the US Government. This data has been collected by the US Energy Information Administration from 1960 to 2019 based on the consumption, production, expenditures, and price of different sources of energy by state.
 
 The observations are of different states in different years and have variables for many energy sources, including coal, kerosene, geothermal, hydro, etc. There are also different variables for the production, consumption, expenditure, and price of these types of energy. For some of these, information was not available, in which case a 0 was reported.
 
@@ -25,7 +25,15 @@ Renewable energy: For our project, energy is considered renewable if it meets tw
 
 Other energy sources: natural gas, coal, as well as any other sources of energy.
 
-Groups of interest: states, regions, political parties, expenditures and consumption of renewable energy and other energy sources, etc. Our goal is to study the effects of these aforementioned variables to learn about consumption habits and technological specialization of different states.
+Groups of interest: states, regions, political parties, expenditures and consumption of renewable energy and other energy sources. Our goal is to study the effects of these aforementioned variables to learn about consumption habits and the technological specialization of different states.
+
+## **Literature Review**
+
+Ratner, M., Bracmort, K., Brown, P., Campbell, R. J., Holt, M., Humphries, M., Pirog, R., & Yacobucci, B. D. (2018, November 5). U.S. Energy in the 21st Century: A Primer. The Congressional Research Service. Retrieved March 10, 2023, from <https://crsreports.congress.gov/product/pdf/R/R46723>.
+
+This article dives into energy usage in the United States and goes into detail about recent trends. The text claims that, despite energy consumption remaining relatively constant, the U.S. has shifted away from non-renewable energy sources (oil and coal) and towards more renewable sources of energy. The article makes the claim that natural gas and renewable energy consumption has increased, oil and nuclear power consumption didn't change and coal decreased. In the 21st century, renewable energy consumption has almost doubled, making its increasing importance obvious. Despite this, renewable energy still only makes up 11% of U.S. energy consumption.
+
+One big difference between our data and the article that we want to expand upon is that the article talks about general trends in the U.S., but doesn't discuss any of the costs. Also, the article doesn't take into account the factors that could provide reasoning for differences in renewable energy usage such as region or political affiliation, which we looked into.
 
 ## **Methodology**
 
@@ -33,7 +41,6 @@ Groups of interest: states, regions, political parties, expenditures and consump
 #| label: data-loading
 
 library(tidyverse)
-
 library(tidymodels)
 data <- read_csv("~/Final Project/data/energy.csv")
 ```
@@ -324,8 +331,6 @@ data <- data |>
 
 ```{r}
 #| label: create-model
-library(tidymodels)
-
 model_region <- linear_reg() |>
   set_engine("lm") |>
   fit(prop_renewable ~ Year * region, data = data)
@@ -562,10 +567,12 @@ Similar to the previous models, this model allows us to predict how the use of r
 
 Our data confirms several important pieces of information about renewable energy usage in the United States. The first is that on a national level, we expect the proportion of renewable energy to continue increasing each year, with a predicted 2030 proportion of 0.0015. However, with that being said we also calculated a low adjusted r-squared value of 0.46, showing a low correlation between a rising proportion of renewable energy and year. This proportion of 0.0015 is very low for the amount of total energy in the US that is renewable. While it is continually increasing, it is increasing very slowly. Therefore, this further proves that big changes need to be made in the use of renewable energy in the United States if we want to slow or stop climate change.
 
-Additionally, on regional levels, we've predicted that the NE will have the highest proportional of renewable energy in the year 2030 at 0.0023, compared to the lowest region, the south, which is predicted to be at 0.00033. Yet, once again, our adjusted r-squared value of 0.09 shows that our estimation is only that, and there is significantly low correlation between the proportion of renewable energy versus year and region, even less than on a national level. Even though this model has a low R squared, there is correlation between region and renewable energy usage. This is most likely a cause of cultural factors in these different regions. These cultural differences manifest because of differing beliefs about climate change as well as different economies and areas of employment. Another factor to consider when looking at regions is accessibility to renewable energy. However, since the Midwest is the region that produces the most renewable energy, but it only has the third highest proportion of renewable energy it is unlikely that this is a large factor in usage of renewable energy.
+Additionally, on regional levels, we've predicted that the NE will have the highest proportion of renewable energy in the year 2030 at 0.0023, compared to the lowest region, the south, which is predicted to be at 0.00033. Yet, once again, our adjusted r-squared value of 0.09 shows that our estimation is only that, and there is significantly low correlation between the proportion of renewable energy versus year and region, even less than on a national level. Even though this model has a low R squared, there is correlation between region and renewable energy usage. This is most likely a cause of cultural factors in these different regions. These cultural differences manifest because of differing beliefs about climate change as well as different economies and areas of employment. Another factor to consider when looking at regions is accessibility to renewable energy. However, since the Midwest is the region that produces the most renewable energy, but it only has the third-highest proportion of renewable energy, it is unlikely that this is a large factor in the usage of renewable energy.
 
-Lastly, when we divided the states based on political affiliation, we found that states who are democratic overall had a higher proportion of renewable energy usage than republican states and are increasing at a faster rate as well. However, we found an adjusted r-squared of -0.0004, showing that there is a very high level of variability that can not be explained by this model. Therefore, while policy based on party likely has an effect, there are many other variables at play to explain the usage of renewable energy.
+Lastly, when we divided the states based on political affiliation, we found that states who are democratic overall had a higher proportion of renewable energy usage than Republican states and are increasing at a faster rate as well. However, we found an adjusted r-squared of -0.0004, showing that there is a very high level of variability that cannot be explained by this model. Therefore, while policy based on party likely has an effect, there are many other variables at play to explain the usage of renewable energy.
 
-Furthermore, a big takeaway from our calculation is that our regional AIC came out to be -16,233.92, while the political affiliation AIC came out to -16038.41, showing that there are a lot of other factors not present in our data set which need to be taken into account and can better explain a correlation to the proportion of renewable energy. Even on a national level, using time as a predictor of the proportion of renewable energy resulted in an AIC of -788.18, so overall the models we have do not represent a meaningful connection to the proportion. This can be summed up to some of the limitations of our data set, with the first being its lack of data on a smaller scope. The information it contains does not go beyond a state level, and we believe that local factors such as resources, energy rates, and metropolitan population can better explain the choice to use renewable energy. Additionally, current events which could potentially affect the energy market and decision making about energy sources are also not included in the data set, which we believe is another significant factor left out. These have manifested in many different ways since 1960, including oil crises, economic crises, and job availability. All of these factors and many more create a huge amount of variability in this data set, making it difficult to predict the future usage of renewable energy.
+## Discussion
 
-Overall, there is not one factor we can look at in order to improve renewable energy usage, instead we need to look at climate change as a whole. If we can increase the amount of education and discourse about climate change, we can hope to bring it into the forefront of people's minds. That way they will consider the effects of everything they do economically, politically, and in their personal lives on the effect on the climate. It is imperative that we work towards a higher national usage of renewable energy at every level in order to save our planet.
+A big takeaway from our models is that the regional AIC came out to be -16,233.92, while the political affiliation AIC came out to -16038.41, showing that there are a lot of other factors not present in our data set which need to be taken into account and can better explain a correlation to the proportion of renewable energy. Even on a national level, using time as a predictor of the proportion of renewable energy resulted in an AIC of -788.18, so overall the models we have do not represent a meaningful connection to the proportion. This can be summed up to some of the limitations of our data set, with the first being its lack of data on a smaller scope. The information it contains does not go beyond a state level, and we believe that local factors such as resources, energy rates, and metropolitan population can better explain the choice to use renewable energy. Additionally, current events which could potentially affect the energy market and decision-making about energy sources are also not included in the data set, which we believe is another significant factor left out. These have manifested in many different ways since 1960, including oil crises, economic crises, and job availability. All of these factors and many more create a huge amount of variability in this data set, making it difficult to predict the future usage of renewable energy.
+
+Overall, there is not one factor we can look at in order to improve renewable energy usage, instead, we need to look at climate change as a whole. If we can increase the amount of education and discourse about climate change, we can hope to bring it into the forefront of people's minds. That way they will consider the effects of everything they do economically, politically, and in their personal lives on the effect on the climate. It is imperative that we work towards a higher national usage of renewable energy at every level in order to save our planet.
