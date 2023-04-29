@@ -45,8 +45,6 @@ library(tidymodels)
 data <- read_csv("~/Final Project/data/energy.csv")
 ```
 
-Creating variables total energy, total renewable energy, and proportion of renewable energy consumption:
-
 ```{r}
 #| label: variables-generation
 
@@ -99,8 +97,6 @@ data <- data |>
           .after = total_renewable)
 ```
 
-Calculate total proportions for all states per year:
-
 ```{r}
 #| label: total-proportion
 
@@ -112,7 +108,7 @@ national_renewable_usage <- data |>
                                           total_energy_all_states))
 ```
 
-Graph national usage of renewable energy:
+**National**:
 
 ```{r}
 #| label: renew-energy-graph

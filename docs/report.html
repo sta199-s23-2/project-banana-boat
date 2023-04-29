@@ -178,7 +178,7 @@ ul.task-list li input[type="checkbox"] {
 ✖ dplyr::lag()      masks stats::lag()
 ✖ yardstick::spec() masks readr::spec()
 ✖ recipes::step()   masks stats::step()
-• Search for functions across packages at https://www.tidymodels.org/find/
+• Use tidymodels_prefer() to resolve common conflicts.
 
 Rows: 3060 Columns: 84
 ── Column specification ────────────────────────────────────────────────────────
@@ -190,15 +190,13 @@ dbl (83): Year, Production.Coal, Consumption.Commercial.Coal, Consumption.Co...
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
 </div>
-<p>Creating variables total energy, total renewable energy, and proportion of renewable energy consumption:</p>
 <div class="cell">
 
 </div>
-<p>Calculate total proportions for all states per year:</p>
 <div class="cell">
 
 </div>
-<p>Graph national usage of renewable energy:</p>
+<p><strong>National</strong>:</p>
 <div class="cell">
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using method = 'loess' and formula = 'y ~ x'</code></pre>
