@@ -38,16 +38,7 @@ This question is important because as climate change is progressing at a rapid r
     **The data set contained both categorical and quantitative variables. The categorical variables include "State". The remaining columns, the focus on different uses of energy, are all quantitative.
 
 ## Literature
-
-<<<<<<< HEAD
--   **Find one published credible article on the topic you are interested in researching.** Ratner, M., Bracmort, K., Brown, P., Campbell, R. J., Holt, M., Humphries, M., Pirog, R., & Yacobucci, B. D. (2018, November 5). U.S. Energy in the 21st Century: A Primer. The Congressional Research Service. Retrieved March 10, 2023, from <https://crsreports.congress.gov/product/pdf/R/R46723>
-=======
-<<<<<<< HEAD
--   **Find one published credible article on the topic you are interested in researching.** Ratner, M., Bracmort, K., Brown, P., Campbell, R. J., Holt, M., Humphries, M., Pirog, R., & Yacobucci, B. D. (2018, November 5). U.S. Energy in the 21st Century: A Primer. The Congressional Research Service. Retrieved March 10, 2023, from <https://crsreports.congress.gov/product/pdf/R/R46723>
-=======
--   **Find one published credible article on the topic you are interested in researching.** Ratner, M., Bracmort, K., Brown, P., Campbell, R. J., Holt, M., Humphries, M., Pirog, R., & Yacobucci, B. D. (2018, November 5). U.S. Energy in the 21st Century: A Primer. The Congressional Research Service. Retrieved March 10, 2023, from (https://crsreports.congress.gov/product/pdf/R/R467230)
->>>>>>> 052dfcd1e3c5610b8e2533a0251a33b36d8a08b8
->>>>>>> e8979bc9aab6fd6679eb8bb99119caf9a994f1dc
+-   **Find one published credible article on the topic you are interested in researching.** Ratner, M., Bracmort, K., Brown, P., Campbell, R. J., Holt, M., Humphries, M., Pirog, R., & Yacobucci, B. D. (2018, November 5). U.S. Energy in the 21st Century: A Primer. The Congressional Research Service. Retrieved March 10, 2023, from (https://crsreports.congress.gov/product/pdf/R/R467230).
 
 -   **Provide a one paragraph summary about the article.** This article dives into energy usage in the United States and goes into detail about recent trends of energy usage. The text claims that, despite energy usage remaining relatively constant, the U.S. has shifted away from non-renewable energy sources (oil and coal) and towards more renewable sources of energy. The article makes the claim that natural gas and renewable energy consumption has increased, oil and nuclear power consumption didn't change and coal decreased. In the 21st century, renewable energy consumption has almost doubled, making its increasing importance obvious. Despite this, renewable energy still only makes up 11% of U.S. energy consumption.
 
@@ -75,15 +66,7 @@ glimpse(energy_states)
 -   **Address ethical concerns about the data, if any.** First, because the information about each survey participant is personal, we have to keep them confidential and solely for the purpose of this study. Specifically, sensitive data such as salary and place of birth should not be shared publicly. Second, although we, as researchers, are working to find meaningful correlations purely from data, it is important to keep in mind the humanity aspect of this project, as the data represents people who come from multicultural backgrounds. Last but not least, researchers should be aware of the potential bias given by the data set, as it does not necessarily reflect what is truly going on in the workplace because of different factors such as non-response from survey takers.
 
 ## Research question
-
-<<<<<<< HEAD
--   **A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)\
-<<<<<<< HEAD
-=======
-=======
 -   **A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
->>>>>>> 052dfcd1e3c5610b8e2533a0251a33b36d8a08b8
->>>>>>> e8979bc9aab6fd6679eb8bb99119caf9a994f1dc
     **With an interest in how policy, jobs, and different aspects of society change during times of hardships, our group wants to analyze the effects of the Great Recession from late 2007 to 2009 on the job market in the United States. In particular, we are interested to see which majors and degree types had the highest employment rate, the change in salaries level of each major during the recession, which ethnicity groups were able to stay in the workplace and which were laid off, and the percentage of people who had to work outside of their majors during college because of the recession. All in all, these mini questions serve to answer our research interest: "How did the Great Recession affect the labor market for United States college graduates from 1973 through 2010?" Listed below are the embedded questions within this research project:
 
 - Within U.S. college graduates from 1973 to 2010, which majors and degree types had the highest employment rate during the Great Recession?
@@ -93,19 +76,10 @@ glimpse(energy_states)
   - Which ethnic groups of U.S. college graduates from 1973 to 2010 had the highest laid-off percentage during the Great Recession?
 
     -   What was the percentage of U.S. college graduates who worked outside of their majors or degrees during the Great Recession?
-
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> e8979bc9aab6fd6679eb8bb99119caf9a994f1dc
--   **A description of the research topic along with a concise statement of your hypotheses on this topic.** Humanity has survived and grown more resilience through many challenges in history - the Spanish Flu, the Great Depression, the World Wars - and the Great Recession of 2008 is not an exception. Analyzing how people reacted to these challenges with resilience and grit will inform historians, policy makers, and anthropologists with human tendency and societal structures. Furthermore, this kind of study will give us the lessons of history to not repeat these same mistakes in the future. College students can also learn about different trends in the economy that will advise them about the degrees and majors to pursue in their post-secondary journey. On a different note, research questions on the effects of one's ethnicity in the job market will reveal discriminatory patterns in the United States against marginalized groups.\
-    \
-    Our team will base our studies on variables related to majors, salaries, demographics, and employment status across the time frame of 2007 to 2009. In particular, the variables and their types we will be using are:
-=======
+    
 -   **A description of the research topic along with a concise statement of your hypotheses on this topic.** Humanity has survived and grown more resilience through many challenges in history - the Spanish Flu, the Great Depression, the World Wars - and the Great Recession of 2008 is not an exception. Analyzing how people reacted to these challenges with resilience and grit will inform historians, policy makers, and anthropologists with human tendency and societal structures. Furthermore, this kind of study will give us the lessons of history to not repeat these same mistakes in the future. College students can also learn about different trends in the economy that will advise them about the degrees and majors to pursue in their post-secondary journey. On a different note, research questions on the effects of one's ethnicity in the job market will reveal discriminatory patterns in the United States against marginalized groups.
   
 Our team will base our studies on variables related to majors, salaries, demographics, and employment status across the time frame of 2007 to 2009. In particular, the variables and their types we will be using are:
->>>>>>> 052dfcd1e3c5610b8e2533a0251a33b36d8a08b8
 
 - `Education.Major`: String
 
@@ -129,16 +103,7 @@ Our hope is to derive meaningful relationships within these variables depending 
     **The majority of variables in this data set and the research questions are quantitative, which include the number of degrees, the amount of people unemployed, graduates working in academic research, and so on. The only categorical variable is the major of each college graduate.
 
 ## Literature
-
-<<<<<<< HEAD
--   **Find one published credible article on the topic you are interested in researching.** Hoynes, H. W., Miller, D. L., & Schaller, J. (2012, March 29). Who suffers during recessions? NBER. Retrieved March 9, 2023, from <https://www.nber.org/papers/w17951>
-=======
-<<<<<<< HEAD
--   **Find one published credible article on the topic you are interested in researching.** Hoynes, H. W., Miller, D. L., & Schaller, J. (2012, March 29). Who suffers during recessions? NBER. Retrieved March 9, 2023, from <https://www.nber.org/papers/w17951>
-=======
 -   **Find one published credible article on the topic you are interested in researching.** Hoynes, H. W., Miller, D. L., & Schaller, J. (2012, March 29). Who suffers during recessions? NBER. Retrieved March 9, 2023, from (https://www.nber.org/papers/w17951)
->>>>>>> 052dfcd1e3c5610b8e2533a0251a33b36d8a08b8
->>>>>>> e8979bc9aab6fd6679eb8bb99119caf9a994f1dc
 
 -   **Provide a one paragraph summary about the article.** The authors of this article found that the impacts of the Great Recession caused by the crash in the real estate market from 2007 to 2009 have been greater for men, for black and Hispanic workers, for young workers, and for less educated workers than for others in the labor market. The researchers identified a common theme among recessions in the past 30 years, indicating that even though dramatic changes, including the increase of women in the labor force, were happening, the pattern of unemployment remained stable. A reason for this phenomenon is because men are more often employed in highly cyclical industries. The researchers concluded that the groups who lost in the recessions of the 1980s are the same people who experience weaker labor market outcomes even in good times. Thus, the labor market effects of the Great Recession were different from those of business cycles over the three previous decades in size and length, but not in type.
 
@@ -168,32 +133,15 @@ glimpse(college_graduates)
     **When working with data as sensitive as crime, it is important to remember that these numbers and observations represent real crimes that occurred which had impacts on real people. The ethical concern here is to balance a high level of analysis of the data with also remembering that these are not simply numbers on a page, but rather real people who were affected. The data should be taken seriously, and a level of care with the data should be taken that remains respectful.
 
 ## Research question
-
-<<<<<<< HEAD
--   **A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)** For our research question, we want to look at how the pandemic impacted crime in the Los Angeles area in a number of areas, including crime frequency, the severity of the crime committed/type of crime, and what the demographics committing the crime were (age, sex, race).  That is all to answer the question: How did the COVID-19 pandemic affect the crime situation in Los Angeles, particularly regarding crime frequency, severity, type, and demographics?
-=======
-<<<<<<< HEAD
--   **A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)** For our research question, we want to look at how the pandemic impacted crime in the Los Angeles area in a number of areas, including crime frequency, the severity of the crime committed/type of crime, and what the demographics committing the crime were (age, sex, race).  That is all to answer the question: How did the COVID-19 pandemic affect the crime situation in Los Angeles, particularly regarding crime frequency, severity, type, and demographics?
-=======
 -   **A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)** For our research question, we want to look at how the pandemic impacted crime in the Los Angeles area in a number of areas, including crime frequency, the severity of the crime committed/type of crime, and what the demographics committing the crime were (age, sex, race). That is all to answer the question: How did the COVID-19 pandemic affect the crime situation in Los Angeles, particularly regarding crime frequency, severity, type, and demographics?
->>>>>>> 052dfcd1e3c5610b8e2533a0251a33b36d8a08b8
->>>>>>> e8979bc9aab6fd6679eb8bb99119caf9a994f1dc
 
 -   **A description of the research topic along with a concise statement of your hypotheses on this topic.** This is an important question, especially now, because as the pandemic has lingered in our life for years now, we have been slowly transitioning out of the pandemic lifestyle. More and more COVID protocols are being stripped away, and society is returning to more normalcy every week, so as we make the switch, it will be interesting to see how the onset of the pandemic affected crime. It has been so long since we lived in a fully non-pandemic world, so investigating how it affected society's behavior, especially in a way as important and extreme as crime, holds a lot of significance in how we adjusted into the current world we know, and how we will react coming out of it. The larger topic here is human behavior and reaction, which we are looking at through crime statistics before and after the onset of the COVID pandemic. We want to look at key factors such as how crime tendencies may have shifted, as well as overall if there was a shift in the amount of crime committed. My hypothesis is that the start of the pandemic likely decreased crime, as well as greatly altered the types of crimes being committed. With businesses shut down, and people much more likely to simply stay home, I believe it was harder to commit crimes. Additionally, the type of crime committed likely changed to be more geared towards the at-home protocols, meaning that there was likely significantly less interpersonal crime amongst strangers.
 
 -   **Identify the types of variables in your research question. Categorical? Quantitative?** In our data set, we are looking at both categorical as well as quantitative variables. Quantitatively, we want to look at the comparison of pre-pandemic versus pandemic crime numbers. Categorically, we also want to go more in-depth and see what the profile of the crimes being committed was.
 
 ## Literature
-
-<<<<<<< HEAD
--   **Find one published credible article on the topic you are interested in researching.** Hill, J., Raber, G. & Gulledge, L. Down with the sickness? Los Angeles burglary and COVID-19 restrictions. J Exp Criminol (2022). <https://doi.org/10.1007/s11292-022-09522-0>
-=======
-<<<<<<< HEAD
--   **Find one published credible article on the topic you are interested in researching.** Hill, J., Raber, G. & Gulledge, L. Down with the sickness? Los Angeles burglary and COVID-19 restrictions. J Exp Criminol (2022). <https://doi.org/10.1007/s11292-022-09522-0>
-=======
 -   **Find one published credible article on the topic you are interested in researching.** Hill, J., Raber, G. & Gulledge, L. Down with the sickness? Los Angeles burglary and COVID-19 restrictions. J Exp Criminol (2022). (https://doi.org/10.1007/s11292-022-09522-0)
->>>>>>> 052dfcd1e3c5610b8e2533a0251a33b36d8a08b8
->>>>>>> e8979bc9aab6fd6679eb8bb99119caf9a994f1dc
+
 
 -   **Provide a one paragraph summary about the article.**
 
